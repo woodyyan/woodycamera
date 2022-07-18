@@ -10,6 +10,7 @@ import CoreData
 
 struct ContentView: View {
     @Environment(\.managedObjectContext) private var viewContext
+    @StateObject var dataModel = DataModel()
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
@@ -20,49 +21,52 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
-                    } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+                    VStack {
+                        HStack {
+                            Text("2022-7-21").foregroundColor(.darkGray)
+                            Text("九九诗").foregroundColor(.themeColor).bold()
+                            Spacer()
+                            Image("location").resizable().frame(width: 20, height: 20, alignment: Alignment.center)
+                            Text("深圳").foregroundColor(.gray)
+                        }
+                        HStack {
+                            Text("森系")
+                                .padding()
+                                .frame(maxHeight: 24, alignment: .center)
+                                .font(.system(size: 12))
+                                .background(Color.themeColor)
+                                .foregroundColor(.white)
+                                .clipShape(Capsule())
+                            Text("小清新")
+                                .padding()
+                                .frame(maxHeight: 24, alignment: .center)
+                                .font(.system(size: 12))
+                                .background(Color.themeColor)
+                                .foregroundColor(.white)
+                                .clipShape(Capsule())
+                            Spacer()
+                        }
+                        GridView()
                     }
                 }
-                .onDelete(perform: deleteItems)
             }
             .toolbar {
-#if os(iOS)
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-#endif
                 ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                    Button(action: moreItem) {
+                        Label("Add Item", systemImage: "wand.and.rays")
                     }
                 }
-            }
-            Text("Select an item")
+            }.navigationBarTitle("Woody的相机", displayMode: .inline)
+                .navigationViewStyle(.stack)
         }
+        .environmentObject(dataModel)
+            .navigationViewStyle(.stack)
     }
 
-    private func addItem() {
+    private func moreItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
             newItem.timestamp = Date()
-
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            offsets.map { items[$0] }.forEach(viewContext.delete)
 
             do {
                 try viewContext.save()
