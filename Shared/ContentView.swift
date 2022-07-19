@@ -22,27 +22,22 @@ struct ContentView: View {
                 ForEach(dataModel.items) { item in
                     VStack {
                         HStack {
-                            Text("2022-7-21").foregroundColor(.darkGray)
-                            Text("九九诗").foregroundColor(.themeColor).bold()
+                            Text(item.date).foregroundColor(.darkGray)
+                            Text(item.modelName).foregroundColor(.themeColor).bold()
                             Spacer()
                             Image("location").resizable().frame(width: 20, height: 20, alignment: Alignment.center)
-                            Text("深圳").foregroundColor(.gray)
+                            Text(item.city).foregroundColor(.gray)
                         }
                         HStack {
-                            Text("森系")
-                                .padding()
-                                .frame(maxHeight: 24, alignment: .center)
-                                .font(.system(size: 12))
-                                .background(Color.themeColor)
-                                .foregroundColor(.white)
-                                .clipShape(Capsule())
-                            Text("小清新")
-                                .padding()
-                                .frame(maxHeight: 24, alignment: .center)
-                                .font(.system(size: 12))
-                                .background(Color.themeColor)
-                                .foregroundColor(.white)
-                                .clipShape(Capsule())
+                            ForEach(item.tags) { tag in
+                                Text(tag.tag)
+                                    .padding()
+                                    .frame(maxHeight: 24, alignment: .center)
+                                    .font(.system(size: 12))
+                                    .background(Color.themeColor)
+                                    .foregroundColor(.white)
+                                    .clipShape(Capsule())
+                            }
                             Spacer()
                         }
                         GridView(modelItem: item)

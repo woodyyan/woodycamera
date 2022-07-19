@@ -17,7 +17,7 @@ class DataModel: ObservableObject {
 //        }
         /*#-code-walkthrough(3.preloadItemsDocumentDirectory)*/
         
-        for _ in 0..<2 {
+        for _ in 0..<3 {
             let modelItem = ModelItem()
             if let urls = Bundle.main.urls(forResourcesWithExtension: "jpg", subdirectory: nil) {
                 for url in urls {
@@ -27,9 +27,9 @@ class DataModel: ObservableObject {
             modelItem.city = "深圳"
             modelItem.date = "2022-7-21"
             modelItem.modelName = "九九诗"
-            modelItem.tags.append("森系")
-            modelItem.tags.append("小清新")
-            modelItem.tags.append("情绪")
+            modelItem.tags.append(TagItem(tag: "森系"))
+            modelItem.tags.append(TagItem(tag: "小清新"))
+            modelItem.tags.append(TagItem(tag: "情绪"))
             items.append(modelItem)
         }
     }

@@ -53,6 +53,8 @@
 		570478622885A74400A676EB /* ColorExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570478602885A74400A676EB /* ColorExtention.swift */; };
 		570478672886EF3600A676EB /* ModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570478662886EF3600A676EB /* ModelItem.swift */; };
 		570478682886EF3600A676EB /* ModelItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570478662886EF3600A676EB /* ModelItem.swift */; };
+		5704786A288704F500A676EB /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57047869288704F500A676EB /* TagItem.swift */; };
+		5704786B288704F500A676EB /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57047869288704F500A676EB /* TagItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +105,7 @@
 		5704785D28852BC500A676EB /* GridItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridItemView.swift; sourceTree = "<group>"; };
 		570478602885A74400A676EB /* ColorExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtention.swift; sourceTree = "<group>"; };
 		570478662886EF3600A676EB /* ModelItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelItem.swift; sourceTree = "<group>"; };
+		57047869288704F500A676EB /* TagItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +167,7 @@
 				5704785D28852BC500A676EB /* GridItemView.swift */,
 				570478602885A74400A676EB /* ColorExtention.swift */,
 				570478662886EF3600A676EB /* ModelItem.swift */,
+				57047869288704F500A676EB /* TagItem.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -408,6 +412,7 @@
 				57047852288527FC00A676EB /* GridView.swift in Sources */,
 				5704781E28844AA500A676EB /* ContentView.swift in Sources */,
 				570478552885281400A676EB /* DataModel.swift in Sources */,
+				5704786A288704F500A676EB /* TagItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +431,7 @@
 				57047853288527FC00A676EB /* GridView.swift in Sources */,
 				5704781F28844AA500A676EB /* ContentView.swift in Sources */,
 				570478562885281400A676EB /* DataModel.swift in Sources */,
+				5704786B288704F500A676EB /* TagItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

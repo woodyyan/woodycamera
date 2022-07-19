@@ -6,7 +6,7 @@ class ModelItem: ObservableObject, Identifiable {
     @Published var images: [ImageItem] = []
     @Published var modelName = "Woody"
     @Published var city = "深圳"
-    @Published var tags: [String] = []
+    @Published var tags: [TagItem] = []
     @Published var date = "2022-7-17"
 }
 
