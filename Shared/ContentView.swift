@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-//    @Environment(\.managedObjectContext) private var viewContext
+    //    @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var dataModel : DataModel
-
-//    @FetchRequest(
-//        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-//        animation: .default)
-//    private var items: FetchedResults<Item>
-
+    
+    //    @FetchRequest(
+    //        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+    //        animation: .default)
+    //    private var items: FetchedResults<Item>
+    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -25,8 +25,16 @@ struct ContentView: View {
                             Text(item.date).foregroundColor(.darkGray)
                             Text(item.modelName).foregroundColor(.themeColor).bold()
                             Spacer()
-                            Image("location").resizable().frame(width: 20, height: 20, alignment: Alignment.center)
-                            Text(item.city).foregroundColor(.gray)
+                            HStack {
+                                Image("location").resizable().frame(width: 16, height: 16, alignment: Alignment.center)
+                                Text(item.city).font(.system(size: 14)).foregroundColor(.gray)
+                                    .padding(.leading, -5)
+                            }
+                            .padding(.all, 5)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(.gray, lineWidth: 1)
+                            )
                         }
                         HStack {
                             ForEach(item.tags) { tag in
@@ -51,41 +59,31 @@ struct ContentView: View {
             .background(Color.lightGray)
             .toolbar {
                 ToolbarItem {
-                    Button(action: moreItem) {
-                        Label("Add Item", systemImage: "wand.and.rays")
+                    Menu {
+                        Button(action: {
+                            print("dd")
+                        }) {
+                            Label("催更", systemImage: "paperplane.circle")
+                        }
+                        Button(action: {}) {
+                            Label("想找Woody拍照", systemImage: "camera")
+                        }
+                        Button(action: {}) {
+                            Label("关于", systemImage: "info.circle")
+                        }
                     }
+                label: {
+                    Label("More", systemImage: "wand.and.rays")
+                        .foregroundColor(.themeColor)
+                }
                 }
             }
-//            .environmentObject(dataModel)
-                .navigationBarTitle("Woody的相机", displayMode: .inline)
-                .navigationViewStyle(.stack)
+            .navigationBarTitle("Woody的相机", displayMode: .inline)
+            .navigationViewStyle(.stack)
         }
         .navigationViewStyle(.stack)
     }
-
-    private func moreItem() {
-        withAnimation {
-//            let newItem = Item(context: viewContext)
-//            newItem.timestamp = Date()
-
-//            do {
-////                try viewContext.save()
-//            } catch {
-//                // Replace this implementation with code to handle the error appropriately.
-//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-//                let nsError = error as NSError
-//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-//            }
-        }
-    }
 }
-
-//private let itemFormatter: DateFormatter = {
-//    let formatter = DateFormatter()
-//    formatter.dateStyle = .short
-//    formatter.timeStyle = .medium
-//    return formatter
-//}()
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
