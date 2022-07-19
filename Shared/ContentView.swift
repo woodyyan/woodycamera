@@ -19,7 +19,7 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            List {
+            ScrollView {
                 ForEach(items) { item in
                     VStack {
                         HStack {
@@ -48,8 +48,13 @@ struct ContentView: View {
                         }
                         GridView()
                     }
+                    .padding()
+                    .background(.white)
+                    .cornerRadius(8.0)
                 }
             }
+            .padding()
+            .background(Color.lightGray)
             .toolbar {
                 ToolbarItem {
                     Button(action: moreItem) {
