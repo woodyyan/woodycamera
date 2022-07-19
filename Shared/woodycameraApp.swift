@@ -9,12 +9,14 @@ import SwiftUI
 
 @main
 struct woodycameraApp: App {
-    let persistenceController = PersistenceController.shared
+//    let persistenceController = PersistenceController.shared
+    @StateObject var dataModel = DataModel()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                .environmentObject(dataModel)
+//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }

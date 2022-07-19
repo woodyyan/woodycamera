@@ -3,11 +3,8 @@ import Foundation
 
 /*#-code-walkthrough(3.dataModel)*/
 class DataModel: ObservableObject {
-    /*#-code-walkthrough(3.dataModel)*/
     
-    /*#-code-walkthrough(3.items)*/
-    @Published var items: [ImageItem] = []
-    /*#-code-walkthrough(3.items)*/
+    @Published var items: [ModelItem] = []
     
     init() {
         /*#-code-walkthrough(3.preloadItemsDocumentDirectory)*/
@@ -20,14 +17,21 @@ class DataModel: ObservableObject {
 //        }
         /*#-code-walkthrough(3.preloadItemsDocumentDirectory)*/
         
-        /*#-code-walkthrough(3.preloadItemsBundleResources)*/
-        if let urls = Bundle.main.urls(forResourcesWithExtension: "jpg", subdirectory: nil) {
-            for url in urls {
-                let item = ImageItem(url: url)
-                items.append(item)
+        for _ in 0..<2 {
+            let modelItem = ModelItem()
+            if let urls = Bundle.main.urls(forResourcesWithExtension: "jpg", subdirectory: nil) {
+                for url in urls {
+                    modelItem.images.append(ImageItem(url: url))
+                }
             }
+            modelItem.city = "深圳"
+            modelItem.date = "2022-7-21"
+            modelItem.modelName = "九九诗"
+            modelItem.tags.append("森系")
+            modelItem.tags.append("小清新")
+            modelItem.tags.append("情绪")
+            items.append(modelItem)
         }
-        /*#-code-walkthrough(3.preloadItemsBundleResources)*/
     }
 }
 

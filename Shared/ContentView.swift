@@ -6,21 +6,20 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct ContentView: View {
-    @Environment(\.managedObjectContext) private var viewContext
-    @StateObject var dataModel = DataModel()
+//    @Environment(\.managedObjectContext) private var viewContext
+    @EnvironmentObject var dataModel : DataModel
 
-    @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-        animation: .default)
-    private var items: FetchedResults<Item>
+//    @FetchRequest(
+//        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+//        animation: .default)
+//    private var items: FetchedResults<Item>
 
     var body: some View {
         NavigationView {
             ScrollView {
-                ForEach(items) { item in
+                ForEach(dataModel.items) { item in
                     VStack {
                         HStack {
                             Text("2022-7-21").foregroundColor(.darkGray)
@@ -46,7 +45,7 @@ struct ContentView: View {
                                 .clipShape(Capsule())
                             Spacer()
                         }
-                        GridView()
+                        GridView(modelItem: item)
                     }
                     .padding()
                     .background(.white)
@@ -61,39 +60,40 @@ struct ContentView: View {
                         Label("Add Item", systemImage: "wand.and.rays")
                     }
                 }
-            }.navigationBarTitle("Woody的相机", displayMode: .inline)
+            }
+//            .environmentObject(dataModel)
+                .navigationBarTitle("Woody的相机", displayMode: .inline)
                 .navigationViewStyle(.stack)
         }
-        .environmentObject(dataModel)
-            .navigationViewStyle(.stack)
+        .navigationViewStyle(.stack)
     }
 
     private func moreItem() {
         withAnimation {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
+//            let newItem = Item(context: viewContext)
+//            newItem.timestamp = Date()
 
-            do {
-                try viewContext.save()
-            } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
-            }
+//            do {
+////                try viewContext.save()
+//            } catch {
+//                // Replace this implementation with code to handle the error appropriately.
+//                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+//                let nsError = error as NSError
+//                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+//            }
         }
     }
 }
 
-private let itemFormatter: DateFormatter = {
-    let formatter = DateFormatter()
-    formatter.dateStyle = .short
-    formatter.timeStyle = .medium
-    return formatter
-}()
+//private let itemFormatter: DateFormatter = {
+//    let formatter = DateFormatter()
+//    formatter.dateStyle = .short
+//    formatter.timeStyle = .medium
+//    return formatter
+//}()
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView().environmentObject(DataModel())
     }
 }
