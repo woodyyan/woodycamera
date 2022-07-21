@@ -1,14 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "wechat.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "wechat-1.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "wechat-2.jpg",
       "idiom" : "universal",
       "scale" : "3x"
     }

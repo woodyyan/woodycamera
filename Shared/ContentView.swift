@@ -8,13 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    //    @Environment(\.managedObjectContext) private var viewContext
     @EnvironmentObject var dataModel : DataModel
+    @State private var navigateTo = ""
+    @State private var isActive = false
+    @State private var showingUrge = false
     
-    //    @FetchRequest(
-    //        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
-    //        animation: .default)
-    //    private var items: FetchedResults<Item>
     
     var body: some View {
         NavigationView {
@@ -61,14 +59,23 @@ struct ContentView: View {
                 ToolbarItem {
                     Menu {
                         Button(action: {
-                            print("dd")
+                            showingUrge = true
                         }) {
                             Label("催更", systemImage: "paperplane.circle")
                         }
-                        Button(action: {}) {
+                        .alert("Woody已经被催更112次", isPresented: $showingUrge) {
+                            Button("OK", role: .cancel) { }
+                        }
+                        Button(action: {
+                            self.navigateTo = "想找Woody拍照"
+                            self.isActive = true
+                        }) {
                             Label("想找Woody拍照", systemImage: "camera")
                         }
-                        Button(action: {}) {
+                        Button(action: {
+                            self.navigateTo = "关于"
+                            self.isActive = true
+                        }) {
                             Label("关于", systemImage: "info.circle")
                         }
                     }
@@ -76,12 +83,29 @@ struct ContentView: View {
                     Label("More", systemImage: "wand.and.rays")
                         .foregroundColor(.themeColor)
                 }
+                .background(
+                    NavigationLink(destination: getDestination(), isActive: $isActive) {
+                        EmptyView()
+                    })
                 }
             }
             .navigationBarTitle("Woody的相机", displayMode: .inline)
             .navigationViewStyle(.stack)
         }
         .navigationViewStyle(.stack)
+    }
+    
+    func getDestination() -> AnyView {
+        switch self.navigateTo {
+        case "催更":
+            return AnyView(Text("ddd"))
+        case "想找Woody拍照":
+            return AnyView(FindWoodyView())
+        case "关于":
+            return AnyView(AboutView())
+        default:
+            return AnyView(AboutView())
+        }
     }
 }
 

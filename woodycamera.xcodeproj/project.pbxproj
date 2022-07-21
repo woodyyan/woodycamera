@@ -55,6 +55,12 @@
 		5704788A288708D000A676EB /* IMG_4250.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 57047875288708D000A676EB /* IMG_4250.jpg */; };
 		5704788B288708D000A676EB /* IMG_4260.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 57047876288708D000A676EB /* IMG_4260.jpg */; };
 		5704788C288708D000A676EB /* IMG_4260.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 57047876288708D000A676EB /* IMG_4260.jpg */; };
+		5704788E28870E6600A676EB /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5704788D28870E6600A676EB /* AboutView.swift */; };
+		5704788F28870E6600A676EB /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5704788D28870E6600A676EB /* AboutView.swift */; };
+		5704789128884A3400A676EB /* FindWoodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5704789028884A3400A676EB /* FindWoodyView.swift */; };
+		5704789228884A3400A676EB /* FindWoodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5704789028884A3400A676EB /* FindWoodyView.swift */; };
+		570478942888508C00A676EB /* wechat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 570478932888508C00A676EB /* wechat.jpg */; };
+		570478952888508C00A676EB /* wechat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 570478932888508C00A676EB /* wechat.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +112,9 @@
 		57047874288708D000A676EB /* IMG_4258.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_4258.jpg; sourceTree = "<group>"; };
 		57047875288708D000A676EB /* IMG_4250.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_4250.jpg; sourceTree = "<group>"; };
 		57047876288708D000A676EB /* IMG_4260.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_4260.jpg; sourceTree = "<group>"; };
+		5704788D28870E6600A676EB /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		5704789028884A3400A676EB /* FindWoodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWoodyView.swift; sourceTree = "<group>"; };
+		570478932888508C00A676EB /* wechat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wechat.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +177,8 @@
 				570478602885A74400A676EB /* ColorExtention.swift */,
 				570478662886EF3600A676EB /* ModelItem.swift */,
 				57047869288704F500A676EB /* TagItem.swift */,
+				5704788D28870E6600A676EB /* AboutView.swift */,
+				5704789028884A3400A676EB /* FindWoodyView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -212,6 +223,7 @@
 		570478352885279F00A676EB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				570478932888508C00A676EB /* wechat.jpg */,
 				57047872288708D000A676EB /* IMG_4241.jpg */,
 				5704786F288708D000A676EB /* IMG_4243.jpg */,
 				57047870288708D000A676EB /* IMG_4248.jpg */,
@@ -356,6 +368,7 @@
 				57047879288708D000A676EB /* IMG_4254.jpg in Resources */,
 				57047881288708D000A676EB /* IMG_4262.jpg in Resources */,
 				57047883288708D000A676EB /* IMG_4241.jpg in Resources */,
+				570478942888508C00A676EB /* wechat.jpg in Resources */,
 				5704787D288708D000A676EB /* IMG_4243.jpg in Resources */,
 				57047887288708D000A676EB /* IMG_4258.jpg in Resources */,
 				5704788B288708D000A676EB /* IMG_4260.jpg in Resources */,
@@ -373,6 +386,7 @@
 				5704787A288708D000A676EB /* IMG_4254.jpg in Resources */,
 				57047882288708D000A676EB /* IMG_4262.jpg in Resources */,
 				57047884288708D000A676EB /* IMG_4241.jpg in Resources */,
+				570478952888508C00A676EB /* wechat.jpg in Resources */,
 				5704787E288708D000A676EB /* IMG_4243.jpg in Resources */,
 				57047888288708D000A676EB /* IMG_4258.jpg in Resources */,
 				5704788C288708D000A676EB /* IMG_4260.jpg in Resources */,
@@ -405,9 +419,11 @@
 				5704785E28852BC500A676EB /* GridItemView.swift in Sources */,
 				570478672886EF3600A676EB /* ModelItem.swift in Sources */,
 				570478612885A74400A676EB /* ColorExtention.swift in Sources */,
+				5704788E28870E6600A676EB /* AboutView.swift in Sources */,
 				5704785B28852B2F00A676EB /* DetailView.swift in Sources */,
 				5704782028844AA500A676EB /* Persistence.swift in Sources */,
 				570478582885285400A676EB /* ImageItem.swift in Sources */,
+				5704789128884A3400A676EB /* FindWoodyView.swift in Sources */,
 				5704781C28844AA500A676EB /* woodycameraApp.swift in Sources */,
 				57047852288527FC00A676EB /* GridView.swift in Sources */,
 				5704781E28844AA500A676EB /* ContentView.swift in Sources */,
@@ -424,9 +440,11 @@
 				5704785F28852BC500A676EB /* GridItemView.swift in Sources */,
 				570478682886EF3600A676EB /* ModelItem.swift in Sources */,
 				570478622885A74400A676EB /* ColorExtention.swift in Sources */,
+				5704788F28870E6600A676EB /* AboutView.swift in Sources */,
 				5704785C28852B2F00A676EB /* DetailView.swift in Sources */,
 				5704782128844AA500A676EB /* Persistence.swift in Sources */,
 				570478592885285400A676EB /* ImageItem.swift in Sources */,
+				5704789228884A3400A676EB /* FindWoodyView.swift in Sources */,
 				5704781D28844AA500A676EB /* woodycameraApp.swift in Sources */,
 				57047853288527FC00A676EB /* GridView.swift in Sources */,
 				5704781F28844AA500A676EB /* ContentView.swift in Sources */,
