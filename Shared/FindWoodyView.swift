@@ -4,13 +4,62 @@ struct FindWoodyView: View {
 
     var body: some View {
         ScrollView {
-            Label("Woody的相机", systemImage: "camera")
-            VStack {
-                Text("拍照有免费的和付费的，欢迎找Woody了解。")
-                    .padding()
+            Group {
+                HStack {
+                    line
+                    Label("Woody的收费说明", systemImage: "dollarsign.circle")
+                        .minimumScaleFactor(0.6)
+                        .lineLimit(1)
+                    line
+                }
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("• 价格：688元")
+                    Text("• 12张精修，底片>80张全送")
+                    Text("• 想去哪里拍都可以，户外室内皆可")
+                    Text("• 想拍什么风格都可以和Woody商量")
+                    Text("• 拍摄时长：1-3小时")
+                    Text("• 交付照片时间：7天内")
+                    Text("• 如果是两个人要加100元噢")
+                }.padding()
             }
-            Text("如果你想找Woody拍照，下面是Woody的联系方式哦。")
-                .padding()
+            Group {
+                HStack {
+                    line
+                    Label("Woody的优点", systemImage: "hand.thumbsup")
+                        .minimumScaleFactor(0.9)
+                        .lineLimit(1)
+                    line
+                }
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("• 人很好说话")
+                    Text("• 超会引导")
+                    Text("• 能帮你克服镜头恐惧症")
+                    Text("• 拍摄+后期修图都是Woody")
+                }.padding()
+            }
+            Group {
+                HStack {
+                    line
+                    Label("Woody的提示", systemImage: "hand.point.right")
+                        .minimumScaleFactor(0.9)
+                        .lineLimit(1)
+                    line
+                }
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("• 不包服装")
+                    Text("• 不包妆造，毕竟Woody不会化妆")
+                    Text("• 如果是付费场地由你付费噢，除非正好Woody也想去这里")
+                }.padding()
+            }
+            HStack {
+                line
+                Label("One More Thing", systemImage: "heart.circle")
+                    .minimumScaleFactor(0.7)
+                    .lineLimit(1)
+                line
+            }
+            Text("Woody每月都会做一次免费拍摄，如果你想参与这次免费拍摄，与Woody共创作品，可以联系Woody。").padding()
+            Divider().padding()
             HStack {
                 Spacer()
                 VStack {
@@ -35,6 +84,10 @@ struct FindWoodyView: View {
                 Spacer()
             }
         }
+    }
+    
+    var line: some View {
+        VStack { Divider().background(Color.themeColor) }.padding()
     }
 }
 
