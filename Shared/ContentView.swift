@@ -11,8 +11,6 @@ struct ContentView: View {
     @EnvironmentObject var dataModel : DataModel
     @State private var navigateTo = ""
     @State private var isActive = false
-    @State private var showingUrge = false
-    
     
     var body: some View {
         NavigationView {
@@ -59,12 +57,10 @@ struct ContentView: View {
                 ToolbarItem {
                     Menu {
                         Button(action: {
-                            showingUrge = true
+                            self.navigateTo = "催更"
+                            self.isActive = true
                         }) {
                             Label("催更", systemImage: "paperplane.circle")
-                        }
-                        .alert("Woody已经被催更112次", isPresented: $showingUrge) {
-                            Button("OK", role: .cancel) { }
                         }
                         Button(action: {
                             self.navigateTo = "想找Woody拍照"
@@ -98,7 +94,7 @@ struct ContentView: View {
     func getDestination() -> AnyView {
         switch self.navigateTo {
         case "催更":
-            return AnyView(Text("ddd"))
+            return AnyView(UrgeWoodyView())
         case "想找Woody拍照":
             return AnyView(FindWoodyView())
         case "关于":
