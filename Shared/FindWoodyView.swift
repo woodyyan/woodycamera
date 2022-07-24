@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct FindWoodyView: View {
+    @State private var isShowingCopy = false
 
     var body: some View {
         ScrollView {
@@ -90,13 +91,14 @@ struct FindWoodyView: View {
                             )
                         Button(action: {
                             UIPasteboard.general.string = "colorguitar"
+                            isShowingCopy = true
                         }, label: {
                             Text("（点击复制）").font(.system(size: 14))
-                        })
+                        }).alert("复制成功", isPresented: $isShowingCopy) {
+                            Button("好", role: .cancel) {
+                            }
+                        }
                     }.padding()
-//                        .border(Color.themeColor, width: 1)
-//                    Spacer()
-//                }
             }
         }
     }
