@@ -19,8 +19,10 @@ class DataModel: ObservableObject {
         /*#-code-walkthrough(3.preloadItemsDocumentDirectory)*/
         
         let url = URL(string: "https://woodycamera-1256194296.cos.ap-guangzhou.myqcloud.com/woodycarema.json")!
-
-        let task = URLSession.shared.dataTask(with: url) { [self](data, response, error) in
+        let config = URLSessionConfiguration.default
+        config.waitsForConnectivity = true
+        config.timeoutIntervalForResource = 60
+        let task = URLSession(configuration: config).dataTask(with: url) { [self](data, response, error) in
             guard let data = data else {
                 print(error ?? "网络错误")
                 setUpDefaultData()
