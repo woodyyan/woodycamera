@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct UrgeWoodyView: View {
+    private let urgeUrl = "https://urge-1256194296.cos.ap-shanghai.myqcloud.com/urge.json"
     @State private var showingSuccessAlert = false
     @State private var showingFailAlert = false
     @State private var urgeCount = 1
@@ -43,7 +44,8 @@ struct UrgeWoodyView: View {
             Label("点它催Woody更新", systemImage: "hand.point.up")
                 .font(.system(size: 14)).padding()
         }.onAppear {
-            syncUrgeCount()
+            syncUrgeCount { count in
+            }
         }
     }
     
@@ -80,16 +82,45 @@ struct UrgeWoodyView: View {
             }
         }
         
-        updateUrgeCount()
+        syncUrgeCount { count in
+            updateUrgeCount(count: count)
+        }
         return true
     }
     
-    func updateUrgeCount() {
-        
+    func updateUrgeCount(count: Int) {
+        // Prepare URL
+        let url = URL(string: urgeUrl)!
+
+        // Prepare URL Request Object
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+         
+        // HTTP Request Parameters which will be sent in HTTP Request Body
+        let postString = "{\"count\" : \(count + 1)}";
+
+        // Set HTTP Request Body
+        request.httpBody = postString.data(using: String.Encoding.utf8);
+
+        // Perform HTTP Request
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+                // Check for Error
+                if let error = error {
+                    print("Error took place \(error)")
+                    return
+                }
+         
+                // Convert HTTP Response Data to a String
+                if let data = data, let dataString = String(data: data, encoding: .utf8) {
+                    print("Response data string:\n \(dataString)")
+                }
+            self.urgeCount = count + 1
+        }
+        task.resume()
     }
     
-    func syncUrgeCount() {
-        let url = URL(string: "https://woodycamera-1256194296.cos.ap-guangzhou.myqcloud.com/urge.json")!
+    func syncUrgeCount(action: @escaping (Int) -> Void) {
+        let url = URL(string: urgeUrl)!
 
         let task = URLSession.shared.dataTask(with: url) { [self](data, response, error) in
             guard let data = data else {
@@ -101,6 +132,7 @@ struct UrgeWoodyView: View {
                     if let count = json["count"] as? Int {
                         print(count)
                         self.urgeCount = count
+                        action(count)
                     }
                 }
             } catch let error as NSError {
