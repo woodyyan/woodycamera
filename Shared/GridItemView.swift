@@ -14,7 +14,7 @@ struct GridItemView: View {
         ZStack(alignment: .topTrailing) {
             /*#-code-walkthrough(4.zStack)*/
             /*#-code-walkthrough(4.asyncImage)*/
-            AsyncImage(url: item.url) { image in
+            AsyncImage(url: item.url.smallUrl) { image in
                 /*#-code-walkthrough(4.asyncImage)*/
                 /*#-code-walkthrough(4.imageView)*/
                 image
@@ -36,5 +36,11 @@ struct GridItemView_Previews: PreviewProvider {
         if let url = Bundle.main.url(forResource: "mushy1", withExtension: "jpg") {
             GridItemView(size: 50, item: ImageItem(url: url, tag: 3))
         }
+    }
+}
+
+extension URL {
+    var smallUrl: URL {
+        return URL(string: self.absoluteString + "/zoomphoto")!
     }
 }
