@@ -29,30 +29,32 @@ class DataModel: ObservableObject {
             do {
                 if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                     if let models = json["models"] as? [Any] {
-                        for model in models {
-                            if let modelJson = model as? [String: Any] {
-                                let index = modelJson["index"] as! Int
-                                let urls = modelJson["urls"] as! [String]
-                                let modelName = modelJson["modelName"] as! String
-                                let city = modelJson["city"] as! String
-                                let tags = modelJson["tags"] as! [String]
-                                let date = modelJson["date"] as! String
-                                
-                                let modelItem = ModelItem()
-                                for url in urls {
-                                    modelItem.images.append(ImageItem(url: URL(string: url)!, tag: urls.firstIndex(of: url)!))
+                        DispatchQueue.main.async {
+                            for model in models {
+                                if let modelJson = model as? [String: Any] {
+                                    let index = modelJson["index"] as! Int
+                                    let urls = modelJson["urls"] as! [String]
+                                    let modelName = modelJson["modelName"] as! String
+                                    let city = modelJson["city"] as! String
+                                    let tags = modelJson["tags"] as! [String]
+                                    let date = modelJson["date"] as! String
+                                    
+                                    let modelItem = ModelItem()
+                                    for url in urls {
+                                        modelItem.images.append(ImageItem(url: URL(string: url)!, tag: urls.firstIndex(of: url)!))
+                                    }
+                                    modelItem.index = index
+                                    modelItem.city = city
+                                    modelItem.date = date
+                                    modelItem.modelName = modelName
+                                    for tag in tags {
+                                        modelItem.tags.append(TagItem(tag: tag))
+                                    }
+                                    self.items.append(modelItem)
                                 }
-                                modelItem.index = index
-                                modelItem.city = city
-                                modelItem.date = date
-                                modelItem.modelName = modelName
-                                for tag in tags {
-                                    modelItem.tags.append(TagItem(tag: tag))
-                                }
-                                self.items.append(modelItem)
                             }
+                            self.items.sort(by: { $0.index > $1.index })
                         }
-//                        self.items = self.items.sorted(by: { $0.index > $1.index })
                     }
                 }
             } catch let error as NSError {
