@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @EnvironmentObject var dataModel : DataModel
+    @Environment(\.colorScheme) var colorScheme
     @State private var navigateTo = ""
     @State private var isActive = false
     
@@ -47,12 +48,13 @@ struct ContentView: View {
                         GridView(modelItem: item)
                     }
                     .padding()
-                    .background(.white)
+                    .background(colorScheme == .light ? .white : Color.darkModeGray)
                     .cornerRadius(8.0)
                 }
             }
+            .frame(maxWidth: .infinity)
             .padding()
-            .background(Color.lightGray)
+            .background(colorScheme == .light ? Color.lightGray : Color.black)
             .toolbar {
                 ToolbarItem {
                     Menu {

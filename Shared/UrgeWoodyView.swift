@@ -36,7 +36,7 @@ struct UrgeWoodyView: View {
             } message: {
                 Text("Woody已经收到你的催更")
             }
-            .alert("催更失败", isPresented: $showingFailAlert) {
+            .alert("哦豁", isPresented: $showingFailAlert) {
                 Button("好的", role: .cancel) { }
             } message: {
                 Text("你今天已经催过了哦，明天再来催吧。")
