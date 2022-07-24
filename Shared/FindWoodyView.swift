@@ -65,29 +65,38 @@ struct FindWoodyView: View {
             Text("Woody每月都会做一次免费拍摄，如果你想参与这次免费拍摄，与Woody共创作品，可以联系Woody。")
                 .padding()
                 .padding()
-            Divider().padding()
-            HStack {
-                Spacer()
-                VStack {
-                    Label("这是Woody的微信二维码", systemImage: "qrcode.viewfinder")
-                    Image("wechat")
-                    Divider()
-                    Label("这是Woody的微信号", systemImage: "message").padding()
-                    Text("colorguitar")
-                        .padding()
+            Group {
+                HStack {
+                    line
+                    Label("Woody的联系方式", systemImage: "plus.message")
                         .foregroundColor(.themeColor)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 30)
-                                .stroke(Color.themeColor, lineWidth: 1)
-                        )
-                    Button(action: {
-                        UIPasteboard.general.string = "colorguitar"
-                    }, label: {
-                        Text("（点击复制）").font(.system(size: 14))
-                    })
-                }.padding()
-                    .border(Color.themeColor, width: 1)
-                Spacer()
+                        .minimumScaleFactor(0.6)
+                        .lineLimit(1)
+                    line
+                }
+//                HStack {
+//                    Spacer()
+                    VStack {
+                        Label("这是Woody的微信二维码", systemImage: "qrcode.viewfinder")
+                        Image("wechat")
+                        Divider()
+                        Label("这是Woody的微信号", systemImage: "message").padding()
+                        Text("colorguitar")
+                            .padding()
+                            .foregroundColor(.themeColor)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 30)
+                                    .stroke(Color.themeColor, lineWidth: 1)
+                            )
+                        Button(action: {
+                            UIPasteboard.general.string = "colorguitar"
+                        }, label: {
+                            Text("（点击复制）").font(.system(size: 14))
+                        })
+                    }.padding()
+//                        .border(Color.themeColor, width: 1)
+//                    Spacer()
+//                }
             }
         }
     }
