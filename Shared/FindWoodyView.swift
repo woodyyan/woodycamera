@@ -29,7 +29,7 @@ struct FindWoodyView: View {
                     line
                     Label("Woody的优点", systemImage: "hand.thumbsup")
                         .foregroundColor(.themeColor)
-                        .minimumScaleFactor(0.9)
+                        .minimumScaleFactor(0.6)
                         .lineLimit(1)
                     line
                 }
@@ -45,7 +45,7 @@ struct FindWoodyView: View {
                     line
                     Label("Woody的提示", systemImage: "hand.point.right")
                         .foregroundColor(.themeColor)
-                        .minimumScaleFactor(0.9)
+                        .minimumScaleFactor(0.6)
                         .lineLimit(1)
                     line
                 }
@@ -59,7 +59,7 @@ struct FindWoodyView: View {
                 line
                 Label("One More Thing", systemImage: "heart.circle")
                     .foregroundColor(.themeColor)
-                    .minimumScaleFactor(0.7)
+                    .minimumScaleFactor(0.6)
                     .lineLimit(1)
                 line
             }
