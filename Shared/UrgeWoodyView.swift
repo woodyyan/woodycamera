@@ -3,7 +3,7 @@ import SwiftUI
 struct UrgeWoodyView: View {
     @State private var showingSuccessAlert = false
     @State private var showingFailAlert = false
-    let urgeCount = 1
+    @State private var urgeCount = 1
 
     @ViewBuilder
     var body: some View {
@@ -42,6 +42,8 @@ struct UrgeWoodyView: View {
             }
             Label("点它催Woody更新", systemImage: "hand.point.up")
                 .font(.system(size: 14)).padding()
+        }.onAppear {
+            syncUrgeCount()
         }
     }
     
@@ -86,9 +88,26 @@ struct UrgeWoodyView: View {
         
     }
     
-    func getUrgeCount() -> Int {
-    
-        return 0
+    func syncUrgeCount() {
+        let url = URL(string: "https://woodycamera-1256194296.cos.ap-guangzhou.myqcloud.com/urge.json")!
+
+        let task = URLSession.shared.dataTask(with: url) { [self](data, response, error) in
+            guard let data = data else {
+                print(error ?? "网络错误")
+                return
+            }
+            do {
+                if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                    if let count = json["count"] as? Int {
+                        print(count)
+                        self.urgeCount = count
+                    }
+                }
+            } catch let error as NSError {
+                print("Failed to load: \(error.localizedDescription)")
+            }
+        }
+        task.resume()
     }
     
     func isSameDay(date1: Date, date2: Date) -> Bool {
