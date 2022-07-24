@@ -21,7 +21,7 @@ class DataModel: ObservableObject {
             let modelItem = ModelItem()
             if let urls = Bundle.main.urls(forResourcesWithExtension: "jpg", subdirectory: nil) {
                 for url in urls {
-                    modelItem.images.append(ImageItem(url: url))
+                    modelItem.images.append(ImageItem(url: url, tag: urls.firstIndex(of: url)!))
                 }
             }
             modelItem.city = "深圳"

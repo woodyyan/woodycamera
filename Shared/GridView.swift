@@ -23,21 +23,11 @@ struct GridView: View {
     
     var body: some View {
         VStack {
-            /*#-code-walkthrough(5.gridImplementation)*/
                 LazyVGrid(columns: gridColumns) {
-                    /*#-code-walkthrough(5.gridImplementation)*/
-                    /*#-code-walkthrough(5.forEach)*/
                     ForEach(modelItem.images) { item in
-                        /*#-code-walkthrough(5.forEach)*/
-                        /*#-code-walkthrough(5.geometryReader)*/
                         GeometryReader { geo in
-                            /*#-code-walkthrough(5.geometryReader)*/
-                            NavigationLink(destination: DetailView(item: item)) {
-                                /*#-code-walkthrough(5.gridItemView)*/
-                                /*#-code-walkthrough(5.gridParameters)*/
+                            NavigationLink(destination: DetailView(modelItem: modelItem, selection: item.tag)) {
                                 GridItemView(size: geo.size.width, item: item)
-                                /*#-code-walkthrough(5.gridParameters)*/
-                                /*#-code-walkthrough(5.gridItemView)*/
                             }
                         }
                         .cornerRadius(8.0)

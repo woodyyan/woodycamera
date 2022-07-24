@@ -59,8 +59,6 @@
 		5704788F28870E6600A676EB /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5704788D28870E6600A676EB /* AboutView.swift */; };
 		5704789128884A3400A676EB /* FindWoodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5704789028884A3400A676EB /* FindWoodyView.swift */; };
 		5704789228884A3400A676EB /* FindWoodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5704789028884A3400A676EB /* FindWoodyView.swift */; };
-		570478942888508C00A676EB /* wechat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 570478932888508C00A676EB /* wechat.jpg */; };
-		570478952888508C00A676EB /* wechat.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 570478932888508C00A676EB /* wechat.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,7 +112,6 @@
 		57047876288708D000A676EB /* IMG_4260.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_4260.jpg; sourceTree = "<group>"; };
 		5704788D28870E6600A676EB /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		5704789028884A3400A676EB /* FindWoodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWoodyView.swift; sourceTree = "<group>"; };
-		570478932888508C00A676EB /* wechat.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wechat.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,7 +220,6 @@
 		570478352885279F00A676EB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				570478932888508C00A676EB /* wechat.jpg */,
 				57047872288708D000A676EB /* IMG_4241.jpg */,
 				5704786F288708D000A676EB /* IMG_4243.jpg */,
 				57047870288708D000A676EB /* IMG_4248.jpg */,
@@ -368,7 +364,6 @@
 				57047879288708D000A676EB /* IMG_4254.jpg in Resources */,
 				57047881288708D000A676EB /* IMG_4262.jpg in Resources */,
 				57047883288708D000A676EB /* IMG_4241.jpg in Resources */,
-				570478942888508C00A676EB /* wechat.jpg in Resources */,
 				5704787D288708D000A676EB /* IMG_4243.jpg in Resources */,
 				57047887288708D000A676EB /* IMG_4258.jpg in Resources */,
 				5704788B288708D000A676EB /* IMG_4260.jpg in Resources */,
@@ -386,7 +381,6 @@
 				5704787A288708D000A676EB /* IMG_4254.jpg in Resources */,
 				57047882288708D000A676EB /* IMG_4262.jpg in Resources */,
 				57047884288708D000A676EB /* IMG_4241.jpg in Resources */,
-				570478952888508C00A676EB /* wechat.jpg in Resources */,
 				5704787E288708D000A676EB /* IMG_4243.jpg in Resources */,
 				57047888288708D000A676EB /* IMG_4258.jpg in Resources */,
 				5704788C288708D000A676EB /* IMG_4260.jpg in Resources */,

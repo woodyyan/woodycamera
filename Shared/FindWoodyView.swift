@@ -8,6 +8,7 @@ struct FindWoodyView: View {
                 HStack {
                     line
                     Label("Woody的收费说明", systemImage: "dollarsign.circle")
+                        .foregroundColor(.themeColor)
                         .minimumScaleFactor(0.6)
                         .lineLimit(1)
                     line
@@ -26,6 +27,7 @@ struct FindWoodyView: View {
                 HStack {
                     line
                     Label("Woody的优点", systemImage: "hand.thumbsup")
+                        .foregroundColor(.themeColor)
                         .minimumScaleFactor(0.9)
                         .lineLimit(1)
                     line
@@ -41,6 +43,7 @@ struct FindWoodyView: View {
                 HStack {
                     line
                     Label("Woody的提示", systemImage: "hand.point.right")
+                        .foregroundColor(.themeColor)
                         .minimumScaleFactor(0.9)
                         .lineLimit(1)
                     line
@@ -54,11 +57,14 @@ struct FindWoodyView: View {
             HStack {
                 line
                 Label("One More Thing", systemImage: "heart.circle")
+                    .foregroundColor(.themeColor)
                     .minimumScaleFactor(0.7)
                     .lineLimit(1)
                 line
             }
-            Text("Woody每月都会做一次免费拍摄，如果你想参与这次免费拍摄，与Woody共创作品，可以联系Woody。").padding()
+            Text("Woody每月都会做一次免费拍摄，如果你想参与这次免费拍摄，与Woody共创作品，可以联系Woody。")
+                .padding()
+                .padding()
             Divider().padding()
             HStack {
                 Spacer()

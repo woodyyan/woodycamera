@@ -34,7 +34,7 @@ struct GridItemView: View {
 struct GridItemView_Previews: PreviewProvider {
     static var previews: some View {
         if let url = Bundle.main.url(forResource: "mushy1", withExtension: "jpg") {
-            GridItemView(size: 50, item: ImageItem(url: url))
+            GridItemView(size: 50, item: ImageItem(url: url, tag: 3))
         }
     }
 }

@@ -2,7 +2,7 @@ import SwiftUI
 //#-learning-task(item)
 
 /*#-code-walkthrough(2.itemModel)*/
-struct ImageItem: Identifiable {
+struct ImageItem: Identifiable, Hashable {
     /*#-code-walkthrough(2.itemModel)*/
 
     /*#-code-walkthrough(2.id)*/
@@ -11,6 +11,7 @@ struct ImageItem: Identifiable {
     /*#-code-walkthrough(2.url)*/
     let url: URL
     /*#-code-walkthrough(2.url)*/
+    let tag: Int
 
 }
 
