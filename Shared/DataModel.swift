@@ -70,7 +70,7 @@ class DataModel: ObservableObject {
     func setUpDefaultData() {
         for _ in 0..<1 {
             let modelItem = ModelItem()
-            if let urls = Bundle.main.urls(forResourcesWithExtension: "jpg", subdirectory: nil) {
+            if let urls = Bundle.main.urls(forResourcesWithExtension: "JPG", subdirectory: nil) {
                 for url in urls {
                     modelItem.images.append(ImageItem(url: url, tag: urls.firstIndex(of: url)!))
                 }

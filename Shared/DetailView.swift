@@ -8,7 +8,6 @@ struct DetailView: View {
         TabView(selection: $selection) {
             ForEach(modelItem.images) { item in
                 ZStack {
-//                    Color.blue
                     AsyncImage(url: item.url) { image in
                         image
                             .resizable()
@@ -22,13 +21,5 @@ struct DetailView: View {
         }
         .tabViewStyle(PageTabViewStyle())
         .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
-//        .onAppear {
-//            setupAppearance()
-//        }
     }
-    
-//    func setupAppearance() {
-//        UIPageControl.appearance().currentPageIndicatorTintColor = .black
-//        UIPageControl.appearance().pageIndicatorTintColor = UIColor.black.withAlphaComponent(0.2)
-//    }
 }
