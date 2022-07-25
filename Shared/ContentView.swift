@@ -12,6 +12,7 @@ struct ContentView: View {
     @Environment(\.colorScheme) var colorScheme
     @State private var navigateTo = ""
     @State private var isActive = false
+    @State private var searchText = ""
     
     var body: some View {
         NavigationView {
@@ -51,6 +52,20 @@ struct ContentView: View {
                     .background(colorScheme == .light ? .white : Color.darkModeGray)
                     .cornerRadius(8.0)
                 }
+            }
+            .searchable(text: $searchText)
+            .onChange(of: searchText, perform: { searchText in
+                print(searchText)
+                if searchText.isEmpty {
+                    self.dataModel.items = self.dataModel.allItems
+                } else {
+                    self.dataModel.items = self.dataModel.allItems.filter { (modelItem) -> Bool in
+                        return modelItem.tags.map{ $0.tag }.contains(searchText)
+                    }
+                }
+            })
+            .onSubmit(of: .search) {
+                print("Search submitted")
             }
             .frame(maxWidth: .infinity)
             .padding()

@@ -7,6 +7,8 @@ class DataModel: ObservableObject {
     
     @Published var items: [ModelItem] = []
     
+    var allItems: [ModelItem] = []
+    
     init() {
         /*#-code-walkthrough(3.preloadItemsDocumentDirectory)*/
 //        if let documentDirectory = FileManager.default.documentDirectory {
@@ -56,6 +58,7 @@ class DataModel: ObservableObject {
                                 }
                             }
                             self.items.sort(by: { $0.index > $1.index })
+                            self.allItems = self.items
                         }
                     }
                 }
