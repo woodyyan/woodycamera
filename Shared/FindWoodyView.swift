@@ -75,30 +75,28 @@ struct FindWoodyView: View {
                         .lineLimit(1)
                     line
                 }
-//                HStack {
-//                    Spacer()
-                    VStack {
-                        Label("这是Woody的微信二维码", systemImage: "qrcode.viewfinder")
-                        Image("wechat")
-                        Divider()
-                        Label("这是Woody的微信号", systemImage: "message").padding()
-                        Text("colorguitar")
-                            .padding()
-                            .foregroundColor(.themeColor)
-                            .overlay(
-                                RoundedRectangle(cornerRadius: 30)
-                                    .stroke(Color.themeColor, lineWidth: 1)
-                            )
-                        Button(action: {
-                            UIPasteboard.general.string = "colorguitar"
-                            isShowingCopy = true
-                        }, label: {
-                            Text("（点击复制）").font(.system(size: 14))
-                        }).alert("复制成功", isPresented: $isShowingCopy) {
-                            Button("好", role: .cancel) {
-                            }
+                VStack {
+                    Label("这是Woody的微信二维码", systemImage: "qrcode.viewfinder")
+                    Image("wechat")
+                    Divider()
+                    Label("这是Woody的微信号", systemImage: "message").padding()
+                    Text("colorguitar")
+                        .padding()
+                        .foregroundColor(.themeColor)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 30)
+                                .stroke(Color.themeColor, lineWidth: 1)
+                        )
+                    Button(action: {
+                        UIPasteboard.general.string = "colorguitar"
+                        isShowingCopy = true
+                    }, label: {
+                        Text("（点击复制）").font(.system(size: 14))
+                    }).alert("复制成功", isPresented: $isShowingCopy) {
+                        Button("好", role: .cancel) {
                         }
-                    }.padding()
+                    }
+                }.padding()
             }
         }
     }

@@ -1,4 +1,5 @@
 import SwiftUI
+import CachedAsyncImage
 
 struct DetailView: View {
     let modelItem: ModelItem
@@ -8,7 +9,7 @@ struct DetailView: View {
         TabView(selection: $selection) {
             ForEach(modelItem.images) { item in
                 ZStack {
-                    AsyncImage(url: item.url) { image in
+                    CachedAsyncImage(url: item.url) { image in
                         image
                             .resizable()
                             .scaledToFit()

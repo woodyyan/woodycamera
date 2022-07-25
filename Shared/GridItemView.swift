@@ -1,30 +1,18 @@
 import SwiftUI
-//#-learning-task(gridItemView)
+import CachedAsyncImage
 
-/*#-code-walkthrough(4.gridItemView)*/
 struct GridItemView: View {
-    /*#-code-walkthrough(4.gridItemView)*/
-    /*#-code-walkthrough(4.properties)*/
     let size: Double
     let item: ImageItem
-    /*#-code-walkthrough(4.properties)*/
 
     var body: some View {
-        /*#-code-walkthrough(4.zStack)*/
         ZStack(alignment: .topTrailing) {
-            /*#-code-walkthrough(4.zStack)*/
-            /*#-code-walkthrough(4.asyncImage)*/
-            AsyncImage(url: item.url.smallUrl) { image in
-                /*#-code-walkthrough(4.asyncImage)*/
-                /*#-code-walkthrough(4.imageView)*/
+            CachedAsyncImage(url: item.url.smallUrl) { image in
                 image
                     .resizable()
                     .scaledToFill()
-                /*#-code-walkthrough(4.imageView)*/
             } placeholder: {
-                /*#-code-walkthrough(4.progressView)*/
                 ProgressView()
-                /*#-code-walkthrough(4.progressView)*/
             }
             .frame(width: size, height: size)
         }

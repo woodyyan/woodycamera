@@ -65,6 +65,7 @@
 		570478B7288D8E3100A676EB /* IMG_3956.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 570478A6288D8E3100A676EB /* IMG_3956.JPG */; };
 		570478B8288D8E3100A676EB /* IMG_3938.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 570478A7288D8E3100A676EB /* IMG_3938.JPG */; };
 		570478B9288D8E3100A676EB /* IMG_3938.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 570478A7288D8E3100A676EB /* IMG_3938.JPG */; };
+		570478BC288E448400A676EB /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 570478BB288E448400A676EB /* CachedAsyncImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				570478BC288E448400A676EB /* CachedAsyncImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +263,9 @@
 			dependencies = (
 			);
 			name = "woodycamera (iOS)";
+			packageProductDependencies = (
+				570478BB288E448400A676EB /* CachedAsyncImage */,
+			);
 			productName = "woodycamera (iOS)";
 			productReference = 570477F928844AA500A676EB /* woodycamera.app */;
 			productType = "com.apple.product-type.application";
@@ -353,6 +358,9 @@
 				Base,
 			);
 			mainGroup = 570477E928844AA200A676EB;
+			packageReferences = (
+				570478BA288E448400A676EB /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+			);
 			productRefGroup = 570477FA28844AA500A676EB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -857,6 +865,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		570478BA288E448400A676EB /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lorenzofiamingo/swiftui-cached-async-image";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		570478BB288E448400A676EB /* CachedAsyncImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 570478BA288E448400A676EB /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
+			productName = CachedAsyncImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		570477EF28844AA200A676EB /* woodycamera.xcdatamodeld */ = {
