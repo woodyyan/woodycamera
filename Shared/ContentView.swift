@@ -60,7 +60,7 @@ struct ContentView: View {
                     self.dataModel.items = self.dataModel.allItems
                 } else {
                     self.dataModel.items = self.dataModel.allItems.filter { (modelItem) -> Bool in
-                        return modelItem.tags.map{ $0.tag }.contains(searchText)
+                        return modelItem.tags.map{ $0.tag }.contains(searchText) || modelItem.modelName.contains(searchText)
                     }
                 }
             })
