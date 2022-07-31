@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct AboutView: View {
+    @State private var isShowingCopy = false
 
     var body: some View {
         VStack {
@@ -20,6 +21,17 @@ struct AboutView: View {
                     RoundedRectangle(cornerRadius: 10)
                         .stroke(Color.themeColor, lineWidth: 1)
                 ).padding()
+            
+            Button("推荐「Woody的相机」给朋友") {
+                let pasteboard = UIPasteboard.general
+                let content = "拍照吗？来「Woody的相机」，下载地址：https://apps.apple.com/us/app/woody%E7%9A%84%E7%9B%B8%E6%9C%BA/id1636187969"
+                pasteboard.string = content
+                isShowingCopy = true
+            }
+            .alert("复制成功，去粘贴给好友吧。", isPresented: $isShowingCopy) {
+                Button("好", role: .cancel) { }
+            }
+            
             Spacer()
             Text("不会弹吉他的程序员不是好摄影师")
                 .foregroundColor(.darkGray)
