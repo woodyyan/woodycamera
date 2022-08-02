@@ -5,16 +5,23 @@ struct UrgeWoodyView: View {
     @State private var showingSuccessAlert = false
     @State private var showingFailAlert = false
     @State private var urgeCount = 1
+    var imageName: String
+    
+//    private func imageName() -> String {
+//        return "Illustration" + String(Int.random(in: 1...17))
+//    }
 
     @ViewBuilder
     var body: some View {
         VStack {
-            Image("logo")
-            if urgeCount > 0 {
-                Text("😭 Woody已被催更\(urgeCount)次了，Woody最近可能比较忙。").padding()
-            } else {
-                Text("😊 还没有人催Woody，Woody可以继续偷懒一阵。").padding()
+            Image(imageName)
+            
+            Text("Woody 已被催更").padding().padding(.top)
+            HStack(alignment: .bottom) {
+                Text("\(urgeCount)").font(.system(size: 30)).foregroundColor(Color.themeColor)
+                Text("次")
             }
+            Text("Woody 最近可能比较忙。").padding().padding(.bottom)
             
             Button {
                 let success = urge()
@@ -24,13 +31,13 @@ struct UrgeWoodyView: View {
                     showingFailAlert = true
                 }
             } label: {
-                Label("Woody快更新！", systemImage: "camera")
+                Label("Woody 快更新", systemImage: "camera").foregroundColor(.white)
             }
             .padding()
-            .overlay(
-                RoundedRectangle(cornerRadius: 30)
-                    .stroke(Color.themeColor, lineWidth: 1)
-            )
+            .background(
+                            RoundedRectangle(cornerRadius: 10)
+                                .fill(Color.themeColor)
+                        )
             .alert("催更成功", isPresented: $showingSuccessAlert) {
                 Button("好的", role: .cancel) { }
             } message: {
@@ -46,7 +53,7 @@ struct UrgeWoodyView: View {
         }.onAppear {
             syncUrgeCount { count in
             }
-        }
+        }.navigationBarTitle("催更", displayMode: .inline)
     }
     
     func urge() -> Bool {
@@ -154,6 +161,6 @@ struct UrgeWoodyView: View {
 
 struct UrgeWoodyView_Previews: PreviewProvider {
     static var previews: some View {
-        UrgeWoodyView()
+        UrgeWoodyView(imageName: "Illustration1")
     }
 }

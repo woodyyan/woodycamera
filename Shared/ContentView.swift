@@ -111,7 +111,8 @@ struct ContentView: View {
     func getDestination() -> AnyView {
         switch self.navigateTo {
         case "催更":
-            return AnyView(UrgeWoodyView())
+            let imageName = "Illustration" + String(Int.random(in: 1...17))
+            return AnyView(UrgeWoodyView(imageName: imageName))
         case "想找Woody拍照":
             return AnyView(FindWoodyView())
         case "关于":
