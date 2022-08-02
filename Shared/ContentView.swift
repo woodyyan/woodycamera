@@ -53,7 +53,7 @@ struct ContentView: View {
                     .cornerRadius(8.0)
                 }
             }
-            .searchable(text: $searchText)
+            .searchable(text: $searchText, prompt: "搜索标签或模特")
             .onChange(of: searchText, perform: { searchText in
                 print(searchText)
                 if searchText.isEmpty {
