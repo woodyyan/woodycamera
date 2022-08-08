@@ -66,6 +66,7 @@
 		570478B8288D8E3100A676EB /* IMG_3938.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 570478A7288D8E3100A676EB /* IMG_3938.JPG */; };
 		570478B9288D8E3100A676EB /* IMG_3938.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 570478A7288D8E3100A676EB /* IMG_3938.JPG */; };
 		570478BC288E448400A676EB /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 570478BB288E448400A676EB /* CachedAsyncImage */; };
+		570478BF28A0E0F800A676EB /* LBJImagePreviewer in Frameworks */ = {isa = PBXBuildFile; productRef = 570478BE28A0E0F800A676EB /* LBJImagePreviewer */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -130,6 +131,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				570478BC288E448400A676EB /* CachedAsyncImage in Frameworks */,
+				570478BF28A0E0F800A676EB /* LBJImagePreviewer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,6 +267,7 @@
 			name = "woodycamera (iOS)";
 			packageProductDependencies = (
 				570478BB288E448400A676EB /* CachedAsyncImage */,
+				570478BE28A0E0F800A676EB /* LBJImagePreviewer */,
 			);
 			productName = "woodycamera (iOS)";
 			productReference = 570477F928844AA500A676EB /* woodycamera.app */;
@@ -361,6 +364,7 @@
 			mainGroup = 570477E928844AA200A676EB;
 			packageReferences = (
 				570478BA288E448400A676EB /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */,
+				570478BD28A0E0F800A676EB /* XCRemoteSwiftPackageReference "LBJImagePreviewer" */,
 			);
 			productRefGroup = 570477FA28844AA500A676EB /* Products */;
 			projectDirPath = "";
@@ -623,7 +627,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = XD7JAMNS86;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -655,7 +659,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_TEAM = XD7JAMNS86;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -876,6 +880,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		570478BD28A0E0F800A676EB /* XCRemoteSwiftPackageReference "LBJImagePreviewer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Lebron1992/LBJImagePreviewer";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -883,6 +895,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 570478BA288E448400A676EB /* XCRemoteSwiftPackageReference "swiftui-cached-async-image" */;
 			productName = CachedAsyncImage;
+		};
+		570478BE28A0E0F800A676EB /* LBJImagePreviewer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 570478BD28A0E0F800A676EB /* XCRemoteSwiftPackageReference "LBJImagePreviewer" */;
+			productName = LBJImagePreviewer;
 		};
 /* End XCSwiftPackageProductDependency section */
 

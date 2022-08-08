@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "lbjimagepreviewer",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Lebron1992/LBJImagePreviewer",
+      "state" : {
+        "revision" : "09623c0c18664b3feefd04a20fc77692cc532b59",
+        "version" : "1.0.0"
+      }
+    },
+    {
       "identity" : "swiftui-cached-async-image",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/lorenzofiamingo/swiftui-cached-async-image",
