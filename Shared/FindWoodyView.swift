@@ -97,7 +97,7 @@ struct FindWoodyView: View {
                         }
                     }
                 }.padding()
-            }
+            }.navigationBarTitle("想找Woody拍照", displayMode: .inline)
         }
     }
     

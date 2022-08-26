@@ -72,26 +72,29 @@ struct ContentView: View {
             .background(colorScheme == .light ? Color.lightGray : Color.black)
             .toolbar {
                 ToolbarItem {
-                    Menu {
-                        Button(action: {
-                            self.navigateTo = "催更"
-                            self.isActive = true
-                        }) {
-                            Label("催更", systemImage: "paperplane.circle")
-                        }
-                        Button(action: {
-                            self.navigateTo = "想找Woody拍照"
-                            self.isActive = true
-                        }) {
-                            Label("想找Woody拍照", systemImage: "camera")
-                        }
-                        Button(action: {
-                            self.navigateTo = "关于"
-                            self.isActive = true
-                        }) {
-                            Label("关于", systemImage: "info.circle")
-                        }
+                    NavigationLink {
+                        MoreView()
                     }
+//                    Menu {
+//                        Button(action: {
+//                            self.navigateTo = "催更"
+//                            self.isActive = true
+//                        }) {
+//                            Label("催更", systemImage: "paperplane.circle")
+//                        }
+//                        Button(action: {
+//                            self.navigateTo = "想找Woody拍照"
+//                            self.isActive = true
+//                        }) {
+//                            Label("想找Woody拍照", systemImage: "camera")
+//                        }
+//                        Button(action: {
+//                            self.navigateTo = "关于"
+//                            self.isActive = true
+//                        }) {
+//                            Label("关于", systemImage: "info.circle")
+//                        }
+//                    }
                 label: {
                     Label("More", systemImage: "wand.and.rays")
                         .foregroundColor(.themeColor)

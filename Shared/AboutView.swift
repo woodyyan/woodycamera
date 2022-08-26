@@ -6,38 +6,18 @@ struct AboutView: View {
     var body: some View {
         NavigationView {
             VStack {
-//                VStack {
-//                    HStack {
-//                        RoundedRectangle(cornerRadius: 20)
-//                            .fill(Color.themeColor)
-//                            .frame(width: 300, height: 30, alignment: .leading)
-//                        RoundedRectangle(cornerRadius: 20)
-//                            .fill(Color.themeColor)
-//                            .frame(width: 300, height: 30, alignment: .leading)
-//                    }
-//                    Image("logo2")
-//                        .resizable()
-//                        .frame(width: 100, height: 100).offset(x: 0, y: -60)
-//                    HStack {
-//                        Circle().fill(Color(r: 124, g: 146, b: 130)).offset(x: 220, y: -10).frame(width: 100, height: 100)
-//                    }
-//                }
-//                .background(Color.themeColor)
-                
-                
-//                Spacer()
                 Image("whitelogo")
                     .resizable()
-                    .frame(width: 93, height: 67)
+                    .frame(width: 74, height: 54)
                     .background(
                         ZStack {
                             Circle()
-                                .fill(Color.themeColor).frame(width: 190, height: 190)
+                                .fill(Color.themeColor).frame(width: 150, height: 150)
                             Circle()
-                                .strokeBorder(Color.themeColor, lineWidth: 1).frame(width: 200, height: 200)
+                                .strokeBorder(Color.themeColor, lineWidth: 1).frame(width: 160, height: 160)
                         }
                     )
-                    .padding(100)
+                    .padding(.bottom, 80)
                 HStack {
                     line
                     Label("Woody的相机", systemImage: "camera")
@@ -52,16 +32,6 @@ struct AboutView: View {
                         RoundedRectangle(cornerRadius: 10)
                             .stroke(Color.themeColor, lineWidth: 1)
                     ).padding()
-                
-                Button("推荐「Woody的相机」给朋友") {
-                    let pasteboard = UIPasteboard.general
-                    let content = "拍照吗？来「Woody的相机」，下载地址：https://apps.apple.com/us/app/woody%E7%9A%84%E7%9B%B8%E6%9C%BA/id1636187969"
-                    pasteboard.string = content
-                    isShowingCopy = true
-                }
-                .alert("复制成功，去粘贴给好友吧。", isPresented: $isShowingCopy) {
-                    Button("好", role: .cancel) { }
-                }
                 
                 Spacer()
                 Text("不会弹吉他的程序员不是好摄影师")

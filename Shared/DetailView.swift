@@ -6,6 +6,9 @@ struct DetailView: View {
     @State var selection = 0
     @State private var zoomed: Bool = false
     @State private var isSharePresented: Bool = false
+    @State private var isStarred: Bool = false
+    @State private var isLiked: Bool = false
+    @State private var isLoginActive: Bool = false
 
     var body: some View {
         TabView(selection: $selection) {
@@ -27,13 +30,48 @@ struct DetailView: View {
                 .tag(item.tag)
             }
         }
+        .tabViewStyle(PageTabViewStyle())
+        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         .toolbar {
-            ToolbarItem {
+            ToolbarItemGroup(placement: .navigationBarTrailing) {
+                NavigationLink("", isActive: $isLoginActive) {
+                    LoginView()
+                }
+                Button {
+                    if UserDefaults.standard.string(forKey: "userId") == nil {
+                        self.isLoginActive = true
+                    } else {
+                        //TODO 点赞逻辑
+                        self.isLiked = true
+                    }
+                } label: {
+                    HStack {
+                        Image(systemName: self.isLiked ? "hand.thumbsup.fill" : "hand.thumbsup")
+                        Text("1")
+                    }
+                }
+                .alert("点赞成功", isPresented: $isLiked) {
+                    Button("好", role: .cancel) { }
+                }
+                Button {
+                    if UserDefaults.standard.string(forKey: "userId") == nil {
+                        self.isLoginActive = true
+                    } else {
+                        //TODO 收藏逻辑
+                        self.isStarred = true
+                    }
+                } label: {
+                    Label("star", systemImage: self.isStarred ? "star.fill" : "star")
+                        .foregroundColor(.themeColor)
+                }
+                .alert("收藏成功", isPresented: $isStarred) {
+                    Button("好", role: .cancel) { }
+                }
                 Button {
                     self.isSharePresented = true
                 } label: {
                     Label("Share", systemImage: "square.and.arrow.up")
-                                        .foregroundColor(.themeColor)
+                        .foregroundColor(.themeColor)
                 }
                 .sheet(isPresented: $isSharePresented, onDismiss: {
                     print("Dismiss")
@@ -42,8 +80,6 @@ struct DetailView: View {
                 })
             }
         }
-        .tabViewStyle(PageTabViewStyle())
-        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
     }
     
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {

@@ -67,6 +67,14 @@
 		570478B9288D8E3100A676EB /* IMG_3938.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 570478A7288D8E3100A676EB /* IMG_3938.JPG */; };
 		570478BC288E448400A676EB /* CachedAsyncImage in Frameworks */ = {isa = PBXBuildFile; productRef = 570478BB288E448400A676EB /* CachedAsyncImage */; };
 		570478BF28A0E0F800A676EB /* LBJImagePreviewer in Frameworks */ = {isa = PBXBuildFile; productRef = 570478BE28A0E0F800A676EB /* LBJImagePreviewer */; };
+		570478C228A1518400A676EB /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570478C128A1518400A676EB /* MoreView.swift */; };
+		570478C328A1518400A676EB /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570478C128A1518400A676EB /* MoreView.swift */; };
+		570478C528A2281500A676EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570478C428A2281500A676EB /* LoginView.swift */; };
+		570478C628A2281500A676EB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570478C428A2281500A676EB /* LoginView.swift */; };
+		570478C828A22D1100A676EB /* SignInWithAppleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570478C728A22D1000A676EB /* SignInWithAppleViewModel.swift */; };
+		570478C928A22D1100A676EB /* SignInWithAppleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570478C728A22D1000A676EB /* SignInWithAppleViewModel.swift */; };
+		570478CB28A27E6400A676EB /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570478CA28A27E6400A676EB /* MyView.swift */; };
+		570478CC28A27E6400A676EB /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570478CA28A27E6400A676EB /* MyView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +131,11 @@
 		570478A5288D8E3100A676EB /* IMG_3946.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3946.JPG; sourceTree = "<group>"; };
 		570478A6288D8E3100A676EB /* IMG_3956.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3956.JPG; sourceTree = "<group>"; };
 		570478A7288D8E3100A676EB /* IMG_3938.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3938.JPG; sourceTree = "<group>"; };
+		570478C028A1501600A676EB /* woodycamera (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "woodycamera (iOS).entitlements"; sourceTree = "<group>"; };
+		570478C128A1518400A676EB /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		570478C428A2281500A676EB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		570478C728A22D1000A676EB /* SignInWithAppleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleViewModel.swift; sourceTree = "<group>"; };
+		570478CA28A27E6400A676EB /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +175,7 @@
 		570477E928844AA200A676EB = {
 			isa = PBXGroup;
 			children = (
+				570478C028A1501600A676EB /* woodycamera (iOS).entitlements */,
 				570478352885279F00A676EB /* Resources */,
 				570477EE28844AA200A676EB /* Shared */,
 				5704780028844AA500A676EB /* macOS */,
@@ -190,6 +204,10 @@
 				5704788D28870E6600A676EB /* AboutView.swift */,
 				5704789028884A3400A676EB /* FindWoodyView.swift */,
 				57047896288D44CD00A676EB /* UrgeWoodyView.swift */,
+				570478C128A1518400A676EB /* MoreView.swift */,
+				570478C428A2281500A676EB /* LoginView.swift */,
+				570478C728A22D1000A676EB /* SignInWithAppleViewModel.swift */,
+				570478CA28A27E6400A676EB /* MyView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -445,14 +463,18 @@
 				5704788E28870E6600A676EB /* AboutView.swift in Sources */,
 				5704785B28852B2F00A676EB /* DetailView.swift in Sources */,
 				5704782028844AA500A676EB /* Persistence.swift in Sources */,
+				570478C228A1518400A676EB /* MoreView.swift in Sources */,
+				570478CB28A27E6400A676EB /* MyView.swift in Sources */,
 				570478582885285400A676EB /* ImageItem.swift in Sources */,
 				57047897288D44CD00A676EB /* UrgeWoodyView.swift in Sources */,
+				570478C528A2281500A676EB /* LoginView.swift in Sources */,
 				5704789128884A3400A676EB /* FindWoodyView.swift in Sources */,
 				5704781C28844AA500A676EB /* woodycameraApp.swift in Sources */,
 				57047852288527FC00A676EB /* GridView.swift in Sources */,
 				5704781E28844AA500A676EB /* ContentView.swift in Sources */,
 				570478552885281400A676EB /* DataModel.swift in Sources */,
 				5704786A288704F500A676EB /* TagItem.swift in Sources */,
+				570478C828A22D1100A676EB /* SignInWithAppleViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,14 +489,18 @@
 				5704788F28870E6600A676EB /* AboutView.swift in Sources */,
 				5704785C28852B2F00A676EB /* DetailView.swift in Sources */,
 				5704782128844AA500A676EB /* Persistence.swift in Sources */,
+				570478C328A1518400A676EB /* MoreView.swift in Sources */,
+				570478CC28A27E6400A676EB /* MyView.swift in Sources */,
 				570478592885285400A676EB /* ImageItem.swift in Sources */,
 				57047898288D44CD00A676EB /* UrgeWoodyView.swift in Sources */,
+				570478C628A2281500A676EB /* LoginView.swift in Sources */,
 				5704789228884A3400A676EB /* FindWoodyView.swift in Sources */,
 				5704781D28844AA500A676EB /* woodycameraApp.swift in Sources */,
 				57047853288527FC00A676EB /* GridView.swift in Sources */,
 				5704781F28844AA500A676EB /* ContentView.swift in Sources */,
 				570478562885281400A676EB /* DataModel.swift in Sources */,
 				5704786B288704F500A676EB /* TagItem.swift in Sources */,
+				570478C928A22D1100A676EB /* SignInWithAppleViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,8 +652,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "woodycamera (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = XD7JAMNS86;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -658,8 +685,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "woodycamera (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = XD7JAMNS86;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
