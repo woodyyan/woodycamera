@@ -1,0 +1,51 @@
+//
+//  Api.swift
+//  woodycamera
+//
+//  Created by 颜松柏 on 2022/9/2.
+//
+
+import Foundation
+
+class Api<T: Decodable> {
+    private let baseUrl = "https://service-18kf5gyr-1307427535.sh.apigw.tencentcs.com/camera-api/"
+    
+    func post() {
+        let params = ["username":"john", "password":"123456"] as Dictionary<String, String>
+
+        var request = URLRequest(url: URL(string: "http://localhost:8080/api/1/login")!)
+        request.httpMethod = "POST"
+        request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        let session = URLSession.shared
+        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+            print(response!)
+            do {
+                let json = try JSONSerialization.jsonObject(with: data!) as! Dictionary<String, AnyObject>
+                print(json)
+            } catch {
+                print("error")
+            }
+        })
+
+        task.resume()
+    }
+    
+    func get(key: String) async -> T? {
+        guard let url = URL(string: baseUrl + key) else {
+            print("Invalid URL")
+            return nil
+        }
+        
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            if let response = try? JSONDecoder().decode(T.self, from: data) {
+                return response
+            }
+        } catch let error {
+            print(error)
+        }
+        return nil
+    }
+}

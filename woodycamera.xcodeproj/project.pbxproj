@@ -43,10 +43,6 @@
 		5704789228884A3400A676EB /* FindWoodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5704789028884A3400A676EB /* FindWoodyView.swift */; };
 		57047897288D44CD00A676EB /* UrgeWoodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57047896288D44CD00A676EB /* UrgeWoodyView.swift */; };
 		57047898288D44CD00A676EB /* UrgeWoodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57047896288D44CD00A676EB /* UrgeWoodyView.swift */; };
-		5704789A288D8D1000A676EB /* woodycarema.json in Resources */ = {isa = PBXBuildFile; fileRef = 57047899288D8D1000A676EB /* woodycarema.json */; };
-		5704789B288D8D1000A676EB /* woodycarema.json in Resources */ = {isa = PBXBuildFile; fileRef = 57047899288D8D1000A676EB /* woodycarema.json */; };
-		5704789D288D8D2300A676EB /* urge.json in Resources */ = {isa = PBXBuildFile; fileRef = 5704789C288D8D2300A676EB /* urge.json */; };
-		5704789E288D8D2300A676EB /* urge.json in Resources */ = {isa = PBXBuildFile; fileRef = 5704789C288D8D2300A676EB /* urge.json */; };
 		570478A8288D8E3100A676EB /* IMG_3944.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 5704789F288D8E3000A676EB /* IMG_3944.JPG */; };
 		570478A9288D8E3100A676EB /* IMG_3944.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 5704789F288D8E3000A676EB /* IMG_3944.JPG */; };
 		570478AA288D8E3100A676EB /* IMG_3948.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 570478A0288D8E3000A676EB /* IMG_3948.JPG */; };
@@ -75,6 +71,10 @@
 		570478C928A22D1100A676EB /* SignInWithAppleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570478C728A22D1000A676EB /* SignInWithAppleViewModel.swift */; };
 		570478CB28A27E6400A676EB /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570478CA28A27E6400A676EB /* MyView.swift */; };
 		570478CC28A27E6400A676EB /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570478CA28A27E6400A676EB /* MyView.swift */; };
+		5783D32B28C1CE630076636F /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5783D32A28C1CE630076636F /* Api.swift */; };
+		5783D32C28C1CE630076636F /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5783D32A28C1CE630076636F /* Api.swift */; };
+		5783D32E28C721CD0076636F /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5783D32D28C721CD0076636F /* PhotoResponse.swift */; };
+		5783D32F28C721CD0076636F /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5783D32D28C721CD0076636F /* PhotoResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,8 +120,6 @@
 		5704788D28870E6600A676EB /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		5704789028884A3400A676EB /* FindWoodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindWoodyView.swift; sourceTree = "<group>"; };
 		57047896288D44CD00A676EB /* UrgeWoodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrgeWoodyView.swift; sourceTree = "<group>"; };
-		57047899288D8D1000A676EB /* woodycarema.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = woodycarema.json; sourceTree = "<group>"; };
-		5704789C288D8D2300A676EB /* urge.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = urge.json; sourceTree = "<group>"; };
 		5704789F288D8E3000A676EB /* IMG_3944.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3944.JPG; sourceTree = "<group>"; };
 		570478A0288D8E3000A676EB /* IMG_3948.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3948.JPG; sourceTree = "<group>"; };
 		570478A1288D8E3000A676EB /* IMG_3932.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_3932.JPG; sourceTree = "<group>"; };
@@ -136,6 +134,8 @@
 		570478C428A2281500A676EB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		570478C728A22D1000A676EB /* SignInWithAppleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleViewModel.swift; sourceTree = "<group>"; };
 		570478CA28A27E6400A676EB /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
+		5783D32A28C1CE630076636F /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		5783D32D28C721CD0076636F /* PhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +208,8 @@
 				570478C428A2281500A676EB /* LoginView.swift */,
 				570478C728A22D1000A676EB /* SignInWithAppleViewModel.swift */,
 				570478CA28A27E6400A676EB /* MyView.swift */,
+				5783D32A28C1CE630076636F /* Api.swift */,
+				5783D32D28C721CD0076636F /* PhotoResponse.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -252,8 +254,6 @@
 		570478352885279F00A676EB /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5704789C288D8D2300A676EB /* urge.json */,
-				57047899288D8D1000A676EB /* woodycarema.json */,
 				570478A1288D8E3000A676EB /* IMG_3932.JPG */,
 				570478A2288D8E3000A676EB /* IMG_3936.JPG */,
 				570478A7288D8E3100A676EB /* IMG_3938.JPG */,
@@ -402,10 +402,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				570478B0288D8E3100A676EB /* IMG_3941.JPG in Resources */,
-				5704789D288D8D2300A676EB /* urge.json in Resources */,
 				570478B8288D8E3100A676EB /* IMG_3938.JPG in Resources */,
 				570478B2288D8E3100A676EB /* IMG_3954.JPG in Resources */,
-				5704789A288D8D1000A676EB /* woodycarema.json in Resources */,
 				570478AC288D8E3100A676EB /* IMG_3932.JPG in Resources */,
 				570478AE288D8E3100A676EB /* IMG_3936.JPG in Resources */,
 				570478B6288D8E3100A676EB /* IMG_3956.JPG in Resources */,
@@ -421,10 +419,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				570478B1288D8E3100A676EB /* IMG_3941.JPG in Resources */,
-				5704789E288D8D2300A676EB /* urge.json in Resources */,
 				570478B9288D8E3100A676EB /* IMG_3938.JPG in Resources */,
 				570478B3288D8E3100A676EB /* IMG_3954.JPG in Resources */,
-				5704789B288D8D1000A676EB /* woodycarema.json in Resources */,
 				570478AD288D8E3100A676EB /* IMG_3932.JPG in Resources */,
 				570478AF288D8E3100A676EB /* IMG_3936.JPG in Resources */,
 				570478B7288D8E3100A676EB /* IMG_3956.JPG in Resources */,
@@ -465,6 +461,7 @@
 				5704782028844AA500A676EB /* Persistence.swift in Sources */,
 				570478C228A1518400A676EB /* MoreView.swift in Sources */,
 				570478CB28A27E6400A676EB /* MyView.swift in Sources */,
+				5783D32E28C721CD0076636F /* PhotoResponse.swift in Sources */,
 				570478582885285400A676EB /* ImageItem.swift in Sources */,
 				57047897288D44CD00A676EB /* UrgeWoodyView.swift in Sources */,
 				570478C528A2281500A676EB /* LoginView.swift in Sources */,
@@ -474,6 +471,7 @@
 				5704781E28844AA500A676EB /* ContentView.swift in Sources */,
 				570478552885281400A676EB /* DataModel.swift in Sources */,
 				5704786A288704F500A676EB /* TagItem.swift in Sources */,
+				5783D32B28C1CE630076636F /* Api.swift in Sources */,
 				570478C828A22D1100A676EB /* SignInWithAppleViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +489,7 @@
 				5704782128844AA500A676EB /* Persistence.swift in Sources */,
 				570478C328A1518400A676EB /* MoreView.swift in Sources */,
 				570478CC28A27E6400A676EB /* MyView.swift in Sources */,
+				5783D32F28C721CD0076636F /* PhotoResponse.swift in Sources */,
 				570478592885285400A676EB /* ImageItem.swift in Sources */,
 				57047898288D44CD00A676EB /* UrgeWoodyView.swift in Sources */,
 				570478C628A2281500A676EB /* LoginView.swift in Sources */,
@@ -500,6 +499,7 @@
 				5704781F28844AA500A676EB /* ContentView.swift in Sources */,
 				570478562885281400A676EB /* DataModel.swift in Sources */,
 				5704786B288704F500A676EB /* TagItem.swift in Sources */,
+				5783D32C28C1CE630076636F /* Api.swift in Sources */,
 				570478C928A22D1100A676EB /* SignInWithAppleViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
