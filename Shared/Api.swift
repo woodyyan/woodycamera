@@ -10,26 +10,35 @@ import Foundation
 class Api<T: Decodable> {
     private let baseUrl = "https://service-18kf5gyr-1307427535.sh.apigw.tencentcs.com/camera-api/"
     
-    func post() {
-        let params = ["username":"john", "password":"123456"] as Dictionary<String, String>
+    func post(key: String, body: Any) async -> T? {
+//        let params = ["username":"john", "password":"123456"] as Dictionary<String, String>
 
-        var request = URLRequest(url: URL(string: "http://localhost:8080/api/1/login")!)
+        var request = URLRequest(url: URL(string: baseUrl + key)!)
         request.httpMethod = "POST"
-        request.httpBody = try? JSONSerialization.data(withJSONObject: params, options: [])
+        request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
 
-        let session = URLSession.shared
-        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
-            print(response!)
-            do {
-                let json = try JSONSerialization.jsonObject(with: data!) as! Dictionary<String, AnyObject>
-                print(json)
-            } catch {
-                print("error")
-            }
-        })
-
-        task.resume()
+//        let session = URLSession.shared
+//        let task = session.dataTask(with: request, completionHandler: { data, response, error -> Void in
+//            print(response!)
+//            do {
+//                let json = try JSONSerialization.jsonObject(with: data!) as! Dictionary<String, AnyObject>
+//                print(json)
+//            } catch {
+//                print("error")
+//            }
+//        })
+//
+//        task.resume()
+        
+        do {
+            let (data, _) = try await URLSession.shared.data(for: request)
+            let result = try JSONDecoder().decode(T.self, from: data)
+            return result
+        } catch let error {
+            print(error)
+        }
+        return nil
     }
     
     func get(key: String) async -> T? {

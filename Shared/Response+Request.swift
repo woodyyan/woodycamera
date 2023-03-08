@@ -19,3 +19,17 @@ struct ModelResponse: Codable {
     var tags: [String]
     var date: String
 }
+
+struct LoginRequest: Codable {
+    var email: String
+    var familyName: String
+    var givenName: String
+    var userId: String
+}
+
+struct LoginResponse: Codable {
+    var email: String
+    var familyName: String
+    var givenName: String
+    var userId: String
+}

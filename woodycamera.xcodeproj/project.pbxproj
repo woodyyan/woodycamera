@@ -73,8 +73,8 @@
 		570478CC28A27E6400A676EB /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570478CA28A27E6400A676EB /* MyView.swift */; };
 		5783D32B28C1CE630076636F /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5783D32A28C1CE630076636F /* Api.swift */; };
 		5783D32C28C1CE630076636F /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5783D32A28C1CE630076636F /* Api.swift */; };
-		5783D32E28C721CD0076636F /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5783D32D28C721CD0076636F /* PhotoResponse.swift */; };
-		5783D32F28C721CD0076636F /* PhotoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5783D32D28C721CD0076636F /* PhotoResponse.swift */; };
+		5783D32E28C721CD0076636F /* Response+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5783D32D28C721CD0076636F /* Response+Request.swift */; };
+		5783D32F28C721CD0076636F /* Response+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5783D32D28C721CD0076636F /* Response+Request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,7 +135,7 @@
 		570478C728A22D1000A676EB /* SignInWithAppleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleViewModel.swift; sourceTree = "<group>"; };
 		570478CA28A27E6400A676EB /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		5783D32A28C1CE630076636F /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
-		5783D32D28C721CD0076636F /* PhotoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoResponse.swift; sourceTree = "<group>"; };
+		5783D32D28C721CD0076636F /* Response+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+Request.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,7 +209,7 @@
 				570478C728A22D1000A676EB /* SignInWithAppleViewModel.swift */,
 				570478CA28A27E6400A676EB /* MyView.swift */,
 				5783D32A28C1CE630076636F /* Api.swift */,
-				5783D32D28C721CD0076636F /* PhotoResponse.swift */,
+				5783D32D28C721CD0076636F /* Response+Request.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -461,7 +461,7 @@
 				5704782028844AA500A676EB /* Persistence.swift in Sources */,
 				570478C228A1518400A676EB /* MoreView.swift in Sources */,
 				570478CB28A27E6400A676EB /* MyView.swift in Sources */,
-				5783D32E28C721CD0076636F /* PhotoResponse.swift in Sources */,
+				5783D32E28C721CD0076636F /* Response+Request.swift in Sources */,
 				570478582885285400A676EB /* ImageItem.swift in Sources */,
 				57047897288D44CD00A676EB /* UrgeWoodyView.swift in Sources */,
 				570478C528A2281500A676EB /* LoginView.swift in Sources */,
@@ -489,7 +489,7 @@
 				5704782128844AA500A676EB /* Persistence.swift in Sources */,
 				570478C328A1518400A676EB /* MoreView.swift in Sources */,
 				570478CC28A27E6400A676EB /* MyView.swift in Sources */,
-				5783D32F28C721CD0076636F /* PhotoResponse.swift in Sources */,
+				5783D32F28C721CD0076636F /* Response+Request.swift in Sources */,
 				570478592885285400A676EB /* ImageItem.swift in Sources */,
 				57047898288D44CD00A676EB /* UrgeWoodyView.swift in Sources */,
 				570478C628A2281500A676EB /* LoginView.swift in Sources */,

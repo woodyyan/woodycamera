@@ -39,26 +39,30 @@ extension SignInWithAppleViewModel {
         // API Call - Pass the email, user full name, user identity provided by Apple and other details.
         print(credential.user)
         UserDefaults.standard.set(credential.user, forKey: "userId")
-        if let email = credential.email {
-            UserDefaults.standard.set(email, forKey: "email")
+        
+        guard let email = credential.email else {
+            return
         }
-        if let familyName = credential.fullName?.familyName {
-            UserDefaults.standard.set(familyName, forKey: "familyName")
+        UserDefaults.standard.set(email, forKey: "email")
+        guard let familyName = credential.fullName?.familyName else {
+            return
         }
-        if let givenName = credential.fullName?.givenName {
-            UserDefaults.standard.set(givenName, forKey: "givenName")
+        UserDefaults.standard.set(familyName, forKey: "familyName")
+        guard let givenName = credential.fullName?.givenName else {
+            return
         }
-        //TODO
-        // Give Call Back to UI
-        self.loginCallback?(true)
+        UserDefaults.standard.set(givenName, forKey: "givenName")
+        
+        login(email: email, familyName: familyName, givenName: givenName, userId: credential.user)
     }
     
     private func signInExistingUser(credential: ASAuthorizationAppleIDCredential) {
         print(credential.user)
         UserDefaults.standard.set(credential.user, forKey: "userId")
         // API Call - Pass the user identity, authorizationCode and identity token
-        //TODO
+        
         // Give Call Back to UI
+        login(email: "empty", familyName: "familyName", givenName: "givenName", userId: credential.user)
         self.loginCallback?(true)
     }
     
@@ -68,5 +72,17 @@ extension SignInWithAppleViewModel {
         // API Call - Sign in with Username and password
         // Give Call Back to UI
         self.loginCallback?(true)
+    }
+    
+    private func login(email: String, familyName: String, givenName: String, userId: String) {
+        Task {
+            let api = Api<LoginResponse>()
+            let loginRequest = LoginRequest(email: email, familyName: familyName, givenName: givenName, userId: userId)
+            if let _ = await api.post(key: "user", body: loginRequest) {
+                self.loginCallback?(true)
+            } else {
+                print("登陆失败")
+            }
+        }
     }
 }

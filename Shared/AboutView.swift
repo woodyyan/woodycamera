@@ -6,6 +6,7 @@ struct AboutView: View {
     var body: some View {
         NavigationView {
             VStack {
+                Spacer()
                 Image("whitelogo")
                     .resizable()
                     .frame(width: 74, height: 54)
