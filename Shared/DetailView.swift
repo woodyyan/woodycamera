@@ -34,11 +34,11 @@ struct DetailView: View {
         .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
-                NavigationStack {
-                    NavigationLink("", isActive: $isLoginActive) {
-                        LoginView()
-                    }
-                }
+//                NavigationStack {
+//                    NavigationLink("", isActive: $isLoginActive) {
+//                        LoginView()
+//                    }
+//                }
                 Button {
                     if UserDefaults.standard.string(forKey: "userId") == nil {
                         self.isLoginActive = true
