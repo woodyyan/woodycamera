@@ -8,7 +8,7 @@
 import Foundation
 
 class Api<T: Decodable> {
-    private let baseUrl = "https://service-18kf5gyr-1307427535.sh.apigw.tencentcs.com/camera-api/"
+    private let baseUrl = "https://woodycamera-1256194296.cos.ap-guangzhou.myqcloud.com/"
     
     func post(key: String, body: Any) async -> T? {
 //        let params = ["username":"john", "password":"123456"] as Dictionary<String, String>

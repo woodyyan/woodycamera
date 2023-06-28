@@ -12,7 +12,7 @@ class DataModel: ObservableObject {
     init() {
         let api = Api<PhotoResponse>()
         Task {
-            let response = await api.get(key: "photo")
+            let response = await api.get(key: "database/woodycamera.json")
             if let photoResponse = response {
                 DispatchQueue.main.async {
                     for model in photoResponse.models {
