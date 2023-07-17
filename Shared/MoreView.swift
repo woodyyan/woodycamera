@@ -23,8 +23,17 @@ struct MoreView: View {
                     NavigationLink(destination: UrgeWoodyView(imageName: imageName)) {
                         Label("催更", systemImage: "paperplane.circle")
                     }
+//                    Button(action: {
+//                                self.isShowingMailView.toggle()
+//                            }) {
+//                                Text("Tap Me")
+//                            }
+//                            .disabled(!MFMailComposeViewController.canSendMail())
+//                            .sheet(isPresented: $isShowingMailView) {
+//                                MailView(result: self.$result)
+//                            }
                     NavigationLink(destination: FindWoodyView()) {
-                        Label("想找Woody拍照", systemImage: "camera")
+                        Label("想拍照", systemImage: "camera")
                     }
                     Button {
                         self.isSharePresented = true

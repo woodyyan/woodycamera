@@ -8,7 +8,7 @@
 import Foundation
 
 class Api<T: Decodable> {
-    private let baseUrl = "https://woodycamera-1256194296.cos.ap-guangzhou.myqcloud.com/"
+    private let baseUrl = "http://47.96.151.169:8081/camera-api/"
     
     func post(key: String, body: Any) async -> T? {
 //        let params = ["username":"john", "password":"123456"] as Dictionary<String, String>
@@ -35,6 +35,23 @@ class Api<T: Decodable> {
             let (data, _) = try await URLSession.shared.data(for: request)
             let result = try JSONDecoder().decode(T.self, from: data)
             return result
+        } catch let error {
+            print(error)
+        }
+        return nil
+    }
+    
+    func getCollections() async -> T? {
+        guard let url = URL(string: baseUrl + "collection") else {
+            print("Invalid URL")
+            return nil
+        }
+        
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            if let response = try? JSONDecoder().decode(T.self, from: data) {
+                return response
+            }
         } catch let error {
             print(error)
         }

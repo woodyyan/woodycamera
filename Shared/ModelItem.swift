@@ -7,8 +7,7 @@ class ModelItem: ObservableObject, Identifiable {
     @Published var modelName = "Woody"
     @Published var city = "深圳"
     @Published var tags: [TagItem] = []
-    @Published var date = "2022-7-17"
-    @Published var index = 0
+    @Published var date:Date = Date()
 }
 
 extension ModelItem: Equatable {

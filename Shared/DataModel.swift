@@ -10,22 +10,21 @@ class DataModel: ObservableObject {
     var allItems: [ModelItem] = []
     
     init() {
-        let api = Api<PhotoResponse>()
+        let api = Api<CollectionsResponse>()
         Task {
-            let response = await api.get(key: "database/woodycamera.json")
+            let response = await api.getCollections()
             if let photoResponse = response {
                 DispatchQueue.main.async {
-                    for model in photoResponse.models {
+                    for model in photoResponse.collections {
                         let modelItem = ModelItem()
-                        modelItem.images = model.urls.map { ImageItem(url: URL(string: $0)!, tag: model.urls.firstIndex(of: $0)!) }
-                        modelItem.index = model.index
+                        modelItem.images = model.urls.map { ImageItem(url: URL(string: $0.url)!, tag: $0.photoId) }
                         modelItem.city = model.city
-                        modelItem.date = model.date
+                        modelItem.date = model.date.toDate()
                         modelItem.modelName = model.modelName
                         modelItem.tags = model.tags.map{ TagItem(tag: $0) }
                         self.items.append(modelItem)
                     }
-                    self.items.sort(by: { $0.index > $1.index })
+                    self.items.sort(by: { $0.date > $1.date })
                     self.allItems = self.items
                 }
             } else {
@@ -43,7 +42,7 @@ class DataModel: ObservableObject {
                 }
             }
             modelItem.city = "深圳"
-            modelItem.date = "2022-7-3"
+            modelItem.date = Date()
             modelItem.modelName = "九九诗"
             modelItem.tags.append(TagItem(tag: "日系"))
             modelItem.tags.append(TagItem(tag: "小清新"))

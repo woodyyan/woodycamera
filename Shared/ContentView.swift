@@ -20,7 +20,7 @@ struct ContentView: View {
                 ForEach(dataModel.items) { item in
                     VStack {
                         HStack {
-                            Text(item.date).foregroundColor(.darkGray)
+                            Text(item.date.toString()).foregroundColor(.darkGray)
                             Text(item.modelName).foregroundColor(.themeColor).bold()
                             Spacer()
                             HStack {

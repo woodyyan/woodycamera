@@ -27,7 +27,7 @@ struct AboutView: View {
                     line
                 }
                 
-                Text("Woody是一个会弹吉他的摄影师，闲暇之余会拍点照片，有时候拍人，有时候拍景。如果你想拍照，欢迎来找Woody，如果你顺便也想弹吉他唱歌，也可以找Woody。")
+                Text("欢迎来到Woody的相机，这里是一个分享Woody的作品的地方。")
                     .padding()
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
@@ -39,7 +39,7 @@ struct AboutView: View {
                     .foregroundColor(.darkGray)
                     .font(.system(size: 14))
                     .padding()
-                Text("Ⓒ 2022 Woody All rights reserved.")
+                Text("Ⓒ 2023 Woody Studio All rights reserved.")
                     .font(.system(size: 12))
                     .foregroundColor(.gray)
             }

@@ -7,17 +7,21 @@
 
 import Foundation
 
-struct PhotoResponse: Codable {
-    var models: [ModelResponse]
+struct CollectionsResponse: Codable {
+    var collections: [CollectionResponse]
 }
 
-struct ModelResponse: Codable {
-    var index: Int
-    var urls: [String]
+struct CollectionResponse: Codable {
+    var urls: [UrlItem]
     var modelName: String
     var city: String
     var tags: [String]
     var date: String
+}
+
+struct UrlItem: Codable {
+    var photoId: Int
+    var url: String
 }
 
 struct LoginRequest: Codable {
