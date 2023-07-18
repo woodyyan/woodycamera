@@ -73,6 +73,8 @@
 		570478CC28A27E6400A676EB /* MyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570478CA28A27E6400A676EB /* MyView.swift */; };
 		5768F0E72A659C6A00ABFADC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5768F0E62A659C6A00ABFADC /* DateExtension.swift */; };
 		5768F0E82A659C6A00ABFADC /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5768F0E62A659C6A00ABFADC /* DateExtension.swift */; };
+		5768F0EA2A66B3F000ABFADC /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5768F0E92A66B3F000ABFADC /* MailView.swift */; };
+		5768F0EB2A66B3F000ABFADC /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5768F0E92A66B3F000ABFADC /* MailView.swift */; };
 		5783D32B28C1CE630076636F /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5783D32A28C1CE630076636F /* Api.swift */; };
 		5783D32C28C1CE630076636F /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5783D32A28C1CE630076636F /* Api.swift */; };
 		5783D32E28C721CD0076636F /* Response+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5783D32D28C721CD0076636F /* Response+Request.swift */; };
@@ -137,6 +139,7 @@
 		570478C728A22D1000A676EB /* SignInWithAppleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleViewModel.swift; sourceTree = "<group>"; };
 		570478CA28A27E6400A676EB /* MyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyView.swift; sourceTree = "<group>"; };
 		5768F0E62A659C6A00ABFADC /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		5768F0E92A66B3F000ABFADC /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		5783D32A28C1CE630076636F /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		5783D32D28C721CD0076636F /* Response+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Response+Request.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -214,6 +217,7 @@
 				5783D32A28C1CE630076636F /* Api.swift */,
 				5783D32D28C721CD0076636F /* Response+Request.swift */,
 				5768F0E62A659C6A00ABFADC /* DateExtension.swift */,
+				5768F0E92A66B3F000ABFADC /* MailView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -457,6 +461,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5704781A28844AA500A676EB /* woodycamera.xcdatamodeld in Sources */,
+				5768F0EA2A66B3F000ABFADC /* MailView.swift in Sources */,
 				5704785E28852BC500A676EB /* GridItemView.swift in Sources */,
 				570478672886EF3600A676EB /* ModelItem.swift in Sources */,
 				570478612885A74400A676EB /* ColorExtention.swift in Sources */,
@@ -486,6 +491,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5704781B28844AA500A676EB /* woodycamera.xcdatamodeld in Sources */,
+				5768F0EB2A66B3F000ABFADC /* MailView.swift in Sources */,
 				5704785F28852BC500A676EB /* GridItemView.swift in Sources */,
 				570478682886EF3600A676EB /* ModelItem.swift in Sources */,
 				570478622885A74400A676EB /* ColorExtention.swift in Sources */,

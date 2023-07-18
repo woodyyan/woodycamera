@@ -1,7 +1,10 @@
 import SwiftUI
+import MessageUI
 
 struct MoreView: View {
     @State private var isSharePresented: Bool = false
+    @State var result: Result<MFMailComposeResult, Error>? = nil
+    @State var isShowingMailView = false
     
     @ViewBuilder
     var body: some View {
@@ -23,18 +26,18 @@ struct MoreView: View {
                     NavigationLink(destination: UrgeWoodyView(imageName: imageName)) {
                         Label("催更", systemImage: "paperplane.circle")
                     }
-//                    Button(action: {
-//                                self.isShowingMailView.toggle()
-//                            }) {
-//                                Text("Tap Me")
-//                            }
-//                            .disabled(!MFMailComposeViewController.canSendMail())
-//                            .sheet(isPresented: $isShowingMailView) {
-//                                MailView(result: self.$result)
-//                            }
-                    NavigationLink(destination: FindWoodyView()) {
-                        Label("想拍照", systemImage: "camera")
-                    }
+                    Button(action: {
+                                self.isShowingMailView.toggle()
+                            }) {
+                                Label("想拍照", systemImage: "camera")
+                            }
+                            .disabled(!MFMailComposeViewController.canSendMail())
+                            .sheet(isPresented: $isShowingMailView) {
+                                MailView(result: self.$result)
+                            }
+//                    NavigationLink(destination: FindWoodyView()) {
+//                        Label("想拍照", systemImage: "camera")
+//                    }
                     Button {
                         self.isSharePresented = true
                     } label: {
