@@ -24,12 +24,12 @@ struct UrlItem: Codable {
     var url: String
 }
 
-struct LoginRequest: Codable {
-    var email: String
-    var familyName: String
-    var givenName: String
-    var userId: String
-}
+//struct LoginRequest: Codable {
+//    var email: String
+//    var familyName: String
+//    var givenName: String
+//    var userId: String
+//}
 
 struct LoginResponse: Codable {
     var email: String

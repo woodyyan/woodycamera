@@ -70,6 +70,7 @@ extension SignInWithAppleViewModel {
         print(credential.user)
         print(credential.password)
         // API Call - Sign in with Username and password
+        login(email: "empty", familyName: credential.user, givenName: credential.password, userId: credential.user)
         // Give Call Back to UI
         self.loginCallback?(true)
     }
@@ -77,8 +78,13 @@ extension SignInWithAppleViewModel {
     private func login(email: String, familyName: String, givenName: String, userId: String) {
         Task {
             let api = Api<LoginResponse>()
-            let loginRequest = LoginRequest(email: email, familyName: familyName, givenName: givenName, userId: userId)
-            if let _ = await api.post(key: "user", body: loginRequest) {
+            let parameters: [String: Any] = [
+                "email": email,
+                "familyName": familyName,
+                "givenName": givenName,
+                "userId": userId
+            ]
+            if let _ = await api.login(loginRequest: parameters) {
                 self.loginCallback?(true)
             } else {
                 print("登陆失败")

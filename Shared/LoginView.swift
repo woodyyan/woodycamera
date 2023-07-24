@@ -15,7 +15,7 @@ struct LoginView: View {
             QuickSignInWithApple()
                     .frame(width: 280, height: 60, alignment: .center)
                     .onTapGesture(perform: showAppleLoginView)
-            Text("Ⓒ 2022 Woody All rights reserved.")
+            Text("Ⓒ 2023 Woody Studio All rights reserved.")
                 .font(.system(size: 12))
                 .foregroundColor(.gray)
         }

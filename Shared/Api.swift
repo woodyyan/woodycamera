@@ -41,6 +41,28 @@ class Api<T: Decodable> {
         return nil
     }
     
+    func login(loginRequest: [String: Any]) async -> T? {
+        guard let url = URL(string: baseUrl + "user") else {
+            print("Invalid URL")
+            return nil
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = try? JSONSerialization.data(withJSONObject: loginRequest, options: .prettyPrinted)
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        do {
+            let (data, _) = try await URLSession.shared.data(for: request)
+            if let response = try? JSONDecoder().decode(T.self, from: data) {
+                return response
+            }
+        } catch let error {
+            print(error)
+        }
+        return nil
+    }
+    
     func getCollections() async -> T? {
         guard let url = URL(string: baseUrl + "collection") else {
             print("Invalid URL")

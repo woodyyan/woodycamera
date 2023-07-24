@@ -27,7 +27,7 @@ struct AboutView: View {
                     line
                 }
                 
-                Text("欢迎来到Woody的相机，这里是一个分享Woody的作品的地方。")
+                Text("欢迎来到Woody的相机，这里所有的作品都来自 Ⓒ Woody Studio。")
                     .padding()
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
