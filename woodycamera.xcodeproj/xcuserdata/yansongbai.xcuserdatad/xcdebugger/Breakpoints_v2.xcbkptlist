@@ -46,8 +46,8 @@
             filePath = "Shared/Api.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "getCollections()"
             landmarkType = "7">
          </BreakpointContent>
@@ -62,8 +62,8 @@
             filePath = "Shared/Api.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "getCollections()"
             landmarkType = "7">
          </BreakpointContent>
@@ -81,6 +81,132 @@
             startingLineNumber = "73"
             endingLineNumber = "73"
             landmarkName = "signinWithUserNamePassword(credential:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ACB61B8E-1805-4192-95C4-98093E88982A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/Api.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
+            landmarkName = "login(loginRequest:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CF66ABC6-1CA9-4C8C-960B-CBFAAAC3EBFE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/Api.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "login(loginRequest:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0C9B5B9F-796F-46AF-B7A6-A59B2AF56C68"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/Api.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "login(loginRequest:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0C9B5B9F-796F-46AF-B7A6-A59B2AF56C68 - 8b9e4dfc53216142"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in woodycamera.Api.login(loginRequest: Swift.Dictionary&lt;Swift.String, Any&gt;) async -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "woodycamera"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yansongbai/Documents/Projects/woodycamera/Shared/Api.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "520">
+               </Location>
+               <Location
+                  uuid = "0C9B5B9F-796F-46AF-B7A6-A59B2AF56C68 - 8b9e4dfc53216142"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in woodycamera.Api.login(loginRequest: Swift.Dictionary&lt;Swift.String, Any&gt;) async -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "woodycamera"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yansongbai/Documents/Projects/woodycamera/Shared/Api.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "572">
+               </Location>
+               <Location
+                  uuid = "0C9B5B9F-796F-46AF-B7A6-A59B2AF56C68 - 8b9e4dfc53216142"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in woodycamera.Api.login(loginRequest: Swift.Dictionary&lt;Swift.String, Any&gt;) async -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "woodycamera"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yansongbai/Documents/Projects/woodycamera/Shared/Api.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "528">
+               </Location>
+               <Location
+                  uuid = "0C9B5B9F-796F-46AF-B7A6-A59B2AF56C68 - 8b9e4dfc53216142"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in woodycamera.Api.login(loginRequest: Swift.Dictionary&lt;Swift.String, Any&gt;) async -&gt; Swift.Optional&lt;&#x3c4;_0_0&gt;"
+                  moduleName = "woodycamera"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yansongbai/Documents/Projects/woodycamera/Shared/Api.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "580">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F3A45623-0FC5-48BC-82A4-C7C116859678"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Shared/Api.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "login(loginRequest:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

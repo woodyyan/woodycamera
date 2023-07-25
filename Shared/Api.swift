@@ -50,16 +50,43 @@ class Api<T: Decodable> {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.httpBody = try? JSONSerialization.data(withJSONObject: loginRequest, options: .prettyPrinted)
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         
-        do {
-            let (data, _) = try await URLSession.shared.data(for: request)
-            if let response = try? JSONDecoder().decode(T.self, from: data) {
-                return response
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard
+                let data = data,
+                let response = response as? HTTPURLResponse,
+                error == nil
+            else {                                                               // check for fundamental networking error
+                print("error", error ?? URLError(.badServerResponse))
+                return
             }
-        } catch let error {
-            print(error)
+            
+            guard (200 ... 299) ~= response.statusCode else {                    // check for http errors
+                print("statusCode should be 2xx, but is \(response.statusCode)")
+                print("response = \(response)")
+                print("data = \(data)")
+                return
+            }
+            
+            if let responseObject = try? JSONDecoder().decode(T.self, from: data) {
+                print(responseObject)
+            } else {
+                print(response)
+            }
         }
+        task.resume()
+//        do {
+//            let (data, _) = try await URLSession.shared.data(for: request)
+//            if let response = try? JSONDecoder().decode(T.self, from: data) {
+//                return response
+//            } else {
+//                print(data)
+//            }
+//        } catch let error {
+//            print(error)
+//        }
         return nil
     }
     
