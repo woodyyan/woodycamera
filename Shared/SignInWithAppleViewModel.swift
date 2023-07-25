@@ -38,7 +38,6 @@ extension SignInWithAppleViewModel {
     private func registerNewUser(credential: ASAuthorizationAppleIDCredential) {
         // API Call - Pass the email, user full name, user identity provided by Apple and other details.
         print(credential.user)
-        UserDefaults.standard.set(credential.user, forKey: "userId")
         
         guard let email = credential.email else {
             return
@@ -58,7 +57,6 @@ extension SignInWithAppleViewModel {
     
     private func signInExistingUser(credential: ASAuthorizationAppleIDCredential) {
         print(credential.user)
-        UserDefaults.standard.set(credential.user, forKey: "userId")
         // API Call - Pass the user identity, authorizationCode and identity token
         
         // Give Call Back to UI
@@ -76,6 +74,7 @@ extension SignInWithAppleViewModel {
     }
     
     private func login(email: String, familyName: String, givenName: String, userId: String) {
+        UserDefaults.standard.set(userId, forKey: "userId")
         Task {
             let api = Api<LoginResponse>()
             let parameters: [String: Any] = [
